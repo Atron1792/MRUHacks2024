@@ -1,3 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 ::res://::1728152253
 icon.svg::CompressedTexture2D::658707289000408551::1728152238::1728152256::1::::<><>::
+=======
+::res://::1728158691
+icon.svg::CompressedTexture2D::658707289000408551::1728158682::1728158691::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728158682::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+::res://assests/::1728158682
+canada_map.png::CompressedTexture2D::5877810601713712434::1728158682::1728158691::1::::<><>::
+train.png::CompressedTexture2D::9148279451024749254::1728158682::1728158691::1::::<><>::
+::res://MapTravaler/::1728158682
+TrainIcon.tscn::PackedScene::4503333096098676775::1728158682::0::1::::<><>::uid://jnc2vu0jasdj::::res://icon.svg
+::res://UI/::1728158682
+::res://UI/UI Scripts/::1728158682
+oil_init.gd::GDScript::-1::1728158682::0::1::::<>Node<>::
+>>>>>>> Stashed changes
