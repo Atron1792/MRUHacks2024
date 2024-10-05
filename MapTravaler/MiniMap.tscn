@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfq5e7nx5svht"]
+[gd_scene load_steps=6 format=3 uid="uid://dfq5e7nx5svht"]
 
 [ext_resource type="Texture2D" uid="uid://cp0ixghqrekxm" path="res://assests/canada_map.png" id="1_0d7rr"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
+[ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 
 [sub_resource type="Curve2D" id="Curve2D_h7x0o"]
 _data = {
@@ -23,9 +24,42 @@ curve = SubResource("Curve2D_h7x0o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
 position = Vector2(6.72585, 13.4815)
-rotation = 2.39594
+rotation = 2.39597
 script = ExtResource("2_2cbrk")
 
 [node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
 rotation = -2.39594
-scale = Vector2(1, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_pimux")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Oil Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Food Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Population Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wood Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stone Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="Control/CanvasLayer"]
+wait_time = 5.0
+
+[connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]

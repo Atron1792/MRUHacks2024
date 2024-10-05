@@ -1,3 +1,7 @@
+Timer
+CanvasLayer
+RichTextLabel
+Control
 PathFollow2D
 Path2D
 TileMapLayer
