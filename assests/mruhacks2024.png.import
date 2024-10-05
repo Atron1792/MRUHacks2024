@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp0ixghqrekxm"
-path="res://.godot/imported/canada_map.png-a0d23fa8b3cd7bad5a1a73422892424f.ctex"
+uid="uid://dwdidxk1ip3r8"
+path="res://.godot/imported/mruhacks2024.png-82d58c3893dcf0157143507b70df3e0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/canada_map.png"
-dest_files=["res://.godot/imported/canada_map.png-a0d23fa8b3cd7bad5a1a73422892424f.ctex"]
+source_file="res://assests/mruhacks2024.png"
+dest_files=["res://.godot/imported/mruhacks2024.png-82d58c3893dcf0157143507b70df3e0a.ctex"]
 
 [params]
 
