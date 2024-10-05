@@ -1,16 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5fpidkfeyhv8"]
+[gd_scene load_steps=5 format=3 uid="uid://b5fpidkfeyhv8"]
 
-[ext_resource type="Texture2D" uid="uid://jnc2vu0jasdj" path="res://icon.svg" id="1_hh1ee"]
+[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_8mnnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv0pj"]
-size = Vector2(126, 128)
+size = Vector2(163, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o71o2"]
+atlas = ExtResource("1_8mnnv")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkysn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o71o2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TrainIcon" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.01, 0.01)
+position = Vector2(1.19209e-07, 8.88178e-16)
+scale = Vector2(0.007, 0.007)
 shape = SubResource("RectangleShape2D_iv0pj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_hh1ee")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.0675, 0.0675)
+sprite_frames = SubResource("SpriteFrames_xkysn")

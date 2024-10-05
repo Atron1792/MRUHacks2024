@@ -1,11 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfq5e7nx5svht"]
+[gd_scene load_steps=8 format=3 uid="uid://dfq5e7nx5svht"]
 
+[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rmwms"]
-load_path = "res://.godot/imported/canada_map.png-a0d23fa8b3cd7bad5a1a73422892424f.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_oydaa"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h33yb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oydaa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Curve2D" id="Curve2D_h7x0o"]
 _data = {
@@ -15,11 +28,11 @@ point_count = 27
 
 [node name="MiniMap" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(574.5, 324)
 scale = Vector2(35.9063, 20.25)
-texture = SubResource("CompressedTexture2D_rmwms")
+sprite_frames = SubResource("SpriteFrames_h33yb")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
 curve = SubResource("Curve2D_h7x0o")
