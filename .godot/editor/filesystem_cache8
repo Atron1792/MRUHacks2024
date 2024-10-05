@@ -1,14 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728166425
+::res://::1728170738
 icon.svg::CompressedTexture2D::658707289000408551::1728166411::1728166425::1::::<><>::
 node_2d.tscn::PackedScene::6880185265062693508::1728166411::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
-::res://assests/::1728166411
-canada_map.png::CompressedTexture2D::5877810601713712434::1728166411::1728166425::1::::<><>::
-train.png::CompressedTexture2D::9148279451024749254::1728166411::1728166425::1::::<><>::
-::res://MapTravaler/::1728166411
-MiniMap.tscn::PackedScene::7545066668208533861::1728166411::0::1::::<><>::uid://cp0ixghqrekxm::::res://assests/canada_map.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd
-path_follow_2d.gd::GDScript::-1::1728166411::0::1::::<>PathFollow2D<>::
+::res://assests/::1728170738
+mruhacks2024.png::CompressedTexture2D::8710102062379773067::1728170738::1728170740::1::::<><>::
+::res://MapTravaler/::1728170738
+MiniMap.tscn::PackedScene::7545066668208533861::1728170462::0::1::::<><>::uid://cp0ixghqrekxm::::res://assests/canada_map.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd
+path_follow_2d.gd::GDScript::-1::1728167460::0::1::::<>PathFollow2D<>::
 TrainIcon.tscn::PackedScene::4503333096098676775::1728166411::0::1::::<><>::uid://jnc2vu0jasdj::::res://icon.svg
 ::res://UI/::1728166411
-::res://UI/UI Scripts/::1728166411
-oil_init.gd::GDScript::-1::1728166411::0::1::::<>Node<>::
+::res://UI/UI Scripts/::1728170462
+oil_init.gd::GDScript::-1::1728170462::0::1::::<>Node<>::

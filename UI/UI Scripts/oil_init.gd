@@ -13,23 +13,23 @@ extends Node
 @export var WoodInit = 0
 @export var StoneInit = 0
 
-
 #GUI Resources background area element
 
 #Ready Initilization
 func _ready():
-	get_node("CanvasLayer/Oil Text").size.x = 100
-	get_node("CanvasLayer/Food Text").size.x = 100
-	get_node("CanvasLayer/Population Text").size.x = 130
-	get_node("CanvasLayer/Wood Text").size.x = 100
-	get_node("CanvasLayer/Stone Text").size.x = 100
+	resource_texts()
+	$"CanvasLayer/Oil Text".size.x = 100
+	$"CanvasLayer/Food Text".size.x = 100
+	$"CanvasLayer/Population Text".size.x = 130
+	$"CanvasLayer/Wood Text".size.x = 100
+	$"CanvasLayer/Stone Text".size.x = 100
 
 	#Text positioning (x,y)
-	$"CanvasLayer/Oil Text".position = Vector2(100,0)
-	$"CanvasLayer/Food Text".position = Vector2(200,0)
-	$"CanvasLayer/Population Text".position = Vector2(300,0)
-	$"CanvasLayer/Wood Text".position = Vector2(500,0)
-	$"CanvasLayer/Stone Text".position = Vector2(600,0)
+	$"CanvasLayer/Oil Text".position = Vector2(50,0)
+	$"CanvasLayer/Food Text".position = Vector2(150,0)
+	$"CanvasLayer/Population Text".position = Vector2(260,0)
+	$"CanvasLayer/Wood Text".position = Vector2(400,0)
+	$"CanvasLayer/Stone Text".position = Vector2(500,0)
 
 
 	
