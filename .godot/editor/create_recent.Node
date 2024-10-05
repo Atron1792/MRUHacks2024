@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 PathFollow2D
 Path2D
 TileMapLayer
 Sprite2D
 TileMap
-=======
-Timer
-Sprite2D
->>>>>>> dev
 CollisionShape2D
 Area2D
