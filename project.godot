@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="MRUHacks2024"
+<<<<<<< HEAD
+run/main_scene="res://MapTravaler/MiniMap.tscn"
+=======
 run/main_scene="res://node_2d.tscn"
+>>>>>>> dev
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

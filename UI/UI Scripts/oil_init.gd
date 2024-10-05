@@ -6,9 +6,15 @@ extends Node
 #______________________________
 
 #Init variables do not change
+<<<<<<< HEAD
+var OilInit = 0
+var FoodInit = 0
+var PeopleInit = 0
+=======
 var OilInit = 50
 var FoodInit = 75
 var PeopleInit = 100
+>>>>>>> dev
 var WoodInit = 0
 var StoneInit = 0
 
@@ -17,6 +23,15 @@ var StoneInit = 0
 
 #Ready Initilization
 func _ready():
+<<<<<<< HEAD
+	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
+	$"CanvasLayer/Food Text".text = "Food: " + str(FoodInit)
+	$"CanvasLayer/Population Text".text = "Population" + str(PeopleInit)
+	$"CanvasLayer/Wood Text".text = "Wood: " + str(WoodInit)
+	$"CanvasLayer/Stone Text".text = "Stone: " + str(StoneInit)
+	
+	print(OilInit)
+=======
 	$"CanvasLayer/Timer".start()
 	
 	$"CanvasLayer/Oil Text".size.x = 100
@@ -69,3 +84,4 @@ func add_Steel(steel):
 func _on_timer_timeout() -> void:
 	depletion_resource()
 	
+>>>>>>> dev
