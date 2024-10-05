@@ -1,3 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728152253
-icon.svg::CompressedTexture2D::658707289000408551::1728152238::1728152256::1::::<><>::
+::res://::1728153095
+icon.svg::CompressedTexture2D::658707289000408551::1728152945::1728153097::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728152945::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+::res://UI/::1728152945
+::res://UI/UI Scripts/::1728152945
+oil_init.gd::GDScript::-1::1728152945::0::1::::<>Node<>::
