@@ -1,11 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfq5e7nx5svht"]
 
+[ext_resource type="Texture2D" uid="uid://cp0ixghqrekxm" path="res://assests/canada_map.png" id="1_0d7rr"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rmwms"]
-load_path = "res://.godot/imported/canada_map.png-a0d23fa8b3cd7bad5a1a73422892424f.ctex"
 
 [sub_resource type="Curve2D" id="Curve2D_h7x0o"]
 _data = {
@@ -19,7 +17,7 @@ point_count = 27
 texture_filter = 1
 position = Vector2(574.5, 324)
 scale = Vector2(35.9063, 20.25)
-texture = SubResource("CompressedTexture2D_rmwms")
+texture = ExtResource("1_0d7rr")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
 curve = SubResource("Curve2D_h7x0o")
@@ -61,13 +59,7 @@ offset_bottom = 40.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Game OVer" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-text = "Game Over"
-
 [node name="Timer" type="Timer" parent="Control/CanvasLayer"]
 wait_time = 5.0
-autostart = true
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
