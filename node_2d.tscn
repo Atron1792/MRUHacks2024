@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5a2v75vj8pei"]
+
+[ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="1_k2tke"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k2tke")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Oil Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Food Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Population Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wood Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stone Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
