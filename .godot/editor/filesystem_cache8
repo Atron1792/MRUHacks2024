@@ -1,7 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
+::res://::1728152824
+icon.svg::CompressedTexture2D::7201421905888053020::1728152238::1728152706::1::::<><>::
+Maptravaler.tscn::PackedScene::1005041572303674184::1728152474::0::1::::<><>::uid://dauomp31l4y4k::::res://icon.svg<>res://path_follow_2d.gd<>uid://bjd3er7sd0xev::::res://TrainMapIcon.tscn
+node_2d.tscn::PackedScene::6880185265062693508::1728151915::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+path_follow_2d.gd::GDScript::-1::1728152474::0::1::::<>PathFollow2D<>::
+TrainMapIcon.tscn::PackedScene::3026021571824202161::1728152474::0::1::::<><>::uid://dauomp31l4y4k::::res://icon.svg
+::res://assests/::1728152824
+canada_map.png::CompressedTexture2D::5877810601713712434::1728152822::1728152824::1::::<><>::
+::res://UI/::1728152629
+::res://UI/UI Scripts/::1728152629
+oil_init.gd::GDScript::-1::1728151915::0::1::::<>Node<>::
+=======
 ::res://::1728153095
 icon.svg::CompressedTexture2D::658707289000408551::1728152945::1728153097::1::::<><>::
 node_2d.tscn::PackedScene::6880185265062693508::1728152945::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
 ::res://UI/::1728152945
 ::res://UI/UI Scripts/::1728152945
 oil_init.gd::GDScript::-1::1728152945::0::1::::<>Node<>::
+>>>>>>> f393e1afb95130c12f02fdfa37c3e28f9e8a8078
