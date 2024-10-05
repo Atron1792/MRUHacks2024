@@ -7,25 +7,22 @@ extends Node
 #______________________________
 
 #Init variables do not change
-var OilInit = 100
-var FoodInit = 0
-var PeopleInit = 0
-var WoodInit = 0
-var StoneInit = 0
+@export var OilInit = 100
+@export var FoodInit = 125
+@export var PeopleInit = 50
+@export var WoodInit = 0
+@export var StoneInit = 0
 
 
 #GUI Resources background area element
 
 #Ready Initilization
 func _ready():
-	$"CanvasLayer/Timer".start()
-	get_tree().paused = false
-
-	$"CanvasLayer/Oil Text".size.x = 100
-	$"CanvasLayer/Food Text".size.x = 100
-	$"CanvasLayer/Population Text".size.x = 130
-	$"CanvasLayer/Wood Text".size.x = 100
-	$"CanvasLayer/Stone Text".size.x = 100
+	get_node("CanvasLayer/Oil Text").size.x = 100
+	get_node("CanvasLayer/Food Text").size.x = 100
+	get_node("CanvasLayer/Population Text").size.x = 130
+	get_node("CanvasLayer/Wood Text").size.x = 100
+	get_node("CanvasLayer/Stone Text").size.x = 100
 
 	#Text positioning (x,y)
 	$"CanvasLayer/Oil Text".position = Vector2(100,0)
@@ -37,19 +34,18 @@ func _ready():
 
 	
 	print(OilInit)
-func _process(delta):
+func _process(_delta):
 	resource_texts()
 	game_end()
-	
 
 
 func depletion_resource():
 	OilInit -= 5
-	FoodInit -= PeopleInit*0.5
+	FoodInit -= round(PeopleInit*0.5)
 	if FoodInit > (PeopleInit*1.25):
 		PeopleInit += 1
 	elif FoodInit < (PeopleInit*0.99):
-		PeopleInit -= randi_range(0, .5)*PeopleInit
+		PeopleInit -= round(randf_range(0, .5)*PeopleInit)
 
 func resource_texts():
 	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)

@@ -1,3 +1,4 @@
+"oil_init.gd"
 extends PathFollow2D
 
 var speed = 0.01
@@ -26,9 +27,13 @@ func _process(delta):
 		else:
 			speed = speed - 0.001
 	if is_speeding_up:
-		if speed >= 0.05:
-			speed = 0.1
+		if speed >= 0.01:
+			speed = 0.01
 			is_speeding_up = false
 		else:
 			speed = speed + 0.001
 	progress_ratio += delta * speed
+
+func end_games():
+	if resources.PeopleInit <= 0:
+		speed=0

@@ -59,13 +59,7 @@ offset_bottom = 40.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Game OVer" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-text = "Game Over"
-
 [node name="Timer" type="Timer" parent="Control/CanvasLayer"]
 wait_time = 5.0
-autostart = true
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
