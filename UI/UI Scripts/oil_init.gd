@@ -3,10 +3,11 @@ extends Node
 # Oil Initilazation Script Runs once
 #Author: Phospor-cell
 #Date: 2024-10-05 @ 11:11 AM
+#Corrupt: 2
 #______________________________
 
 #Init variables do not change
-var OilInit = 0
+var OilInit = 100
 var FoodInit = 0
 var PeopleInit = 0
 var WoodInit = 0
@@ -18,6 +19,7 @@ var StoneInit = 0
 #Ready Initilization
 func _ready():
 	$"CanvasLayer/Timer".start()
+	get_tree().paused = false
 
 	$"CanvasLayer/Oil Text".size.x = 100
 	$"CanvasLayer/Food Text".size.x = 100
@@ -37,6 +39,8 @@ func _ready():
 	print(OilInit)
 func _process(delta):
 	resource_texts()
+	game_end()
+	
 
 
 func depletion_resource():
@@ -71,3 +75,7 @@ func add_Steel(steel):
 
 func _on_timer_timeout() -> void:
 	depletion_resource()
+	
+func game_end():
+	if PeopleInit <= 0:
+		pass
