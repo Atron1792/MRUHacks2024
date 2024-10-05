@@ -1,13 +1,31 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728159536
-icon.svg::CompressedTexture2D::658707289000408551::1728152945::1728159536::1::::<><>::
-node_2d.tscn::PackedScene::6880185265062693508::1728159309::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
-::res://assests/::1728159536
-canada_map.png::CompressedTexture2D::5877810601713712434::1728153742::1728159536::1::::<><>::
-::res://MapTravaler/::1728159554
-MiniMap.tscn::PackedScene::7545066668208533861::1728159554::0::1::::<><>::uid://cp0ixghqrekxm::::res://assests/canada_map.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn
-path_follow_2d.gd::GDScript::-1::1728159309::0::1::::<>PathFollow2D<>::
-TrainIcon.tscn::PackedScene::4503333096098676775::1728159309::0::1::::<><>::uid://jnc2vu0jasdj::::res://icon.svg
-::res://UI/::1728153647
-::res://UI/UI Scripts/::1728159274
-oil_init.gd::GDScript::-1::1728152945::0::1::::<>Node<>::
+<<<<<<< HEAD
+::res://::1728154868
+icon.svg::CompressedTexture2D::658707289000408551::1728152238::1728153726::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728153889::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+::res://assests/::1728154879
+canada_map.png::CompressedTexture2D::5877810601713712434::1728153889::1728154870::1::::<><>::
+train.png::CompressedTexture2D::9148279451024749254::1728154879::1728154879::1::::<><>::
+::res://MapTravaler/::1728153889
+TrainIcon.tscn::PackedScene::4503333096098676775::1728153889::0::1::::<><>::uid://jnc2vu0jasdj::::res://icon.svg
+::res://UI/::1728153889
+::res://UI/UI Scripts/::1728153889
+oil_init.gd::GDScript::-1::1728153889::0::1::::<>Node<>::
+=======
+<<<<<<< Updated upstream
+::res://::1728152253
+icon.svg::CompressedTexture2D::658707289000408551::1728152238::1728152256::1::::<><>::
+=======
+::res://::1728158691
+icon.svg::CompressedTexture2D::658707289000408551::1728158682::1728158691::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728158682::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+::res://assests/::1728158682
+canada_map.png::CompressedTexture2D::5877810601713712434::1728158682::1728158691::1::::<><>::
+train.png::CompressedTexture2D::9148279451024749254::1728158682::1728158691::1::::<><>::
+::res://MapTravaler/::1728158682
+TrainIcon.tscn::PackedScene::4503333096098676775::1728158682::0::1::::<><>::uid://jnc2vu0jasdj::::res://icon.svg
+::res://UI/::1728158682
+::res://UI/UI Scripts/::1728158682
+oil_init.gd::GDScript::-1::1728158682::0::1::::<>Node<>::
+>>>>>>> Stashed changes
+>>>>>>> dev
