@@ -1,3 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728147873
-icon.svg::CompressedTexture2D::7201421905888053020::1728147846::1728147875::1::::<><>::
+::res://::1728152824
+icon.svg::CompressedTexture2D::7201421905888053020::1728152238::1728152706::1::::<><>::
+Maptravaler.tscn::PackedScene::1005041572303674184::1728152474::0::1::::<><>::uid://dauomp31l4y4k::::res://icon.svg<>res://path_follow_2d.gd<>uid://bjd3er7sd0xev::::res://TrainMapIcon.tscn
+node_2d.tscn::PackedScene::6880185265062693508::1728151915::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+path_follow_2d.gd::GDScript::-1::1728152474::0::1::::<>PathFollow2D<>::
+TrainMapIcon.tscn::PackedScene::3026021571824202161::1728152474::0::1::::<><>::uid://dauomp31l4y4k::::res://icon.svg
+::res://assests/::1728152824
+canada_map.png::CompressedTexture2D::5877810601713712434::1728152822::1728152824::1::::<><>::
+::res://UI/::1728152629
+::res://UI/UI Scripts/::1728152629
+oil_init.gd::GDScript::-1::1728151915::0::1::::<>Node<>::
