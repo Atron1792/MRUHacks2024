@@ -10,14 +10,13 @@ config_version=5
 
 [application]
 
-config/name="BigMac"
-run/main_scene="res://Maptravaler.tscn"
+config/name="MRUHacks2024"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="BigMac"
+project/assembly_name="MRUHacks2024"
 
 [rendering]
 
