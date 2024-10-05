@@ -1,3 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728147060
-icon.svg::CompressedTexture2D::7201421905888053020::1728146849::1728146861::1::::<><>::
+::res://::1728149170
+icon.svg::CompressedTexture2D::7201421905888053020::1728147252::1728147273::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728149170::0::1::::<><>::
+::res://UI/::1728148097
+::res://UI/UI Assets/::1728147420
+::res://UI/UI Scripts/::1728149175
+resources_init.gd::GDScript::-1::1728148815::0::1::::<>Node<>::
