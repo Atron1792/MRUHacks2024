@@ -8,8 +8,9 @@ size = Vector2(126, 128)
 [node name="TrainIcon" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+scale = Vector2(0.01, 0.01)
 shape = SubResource("RectangleShape2D_iv0pj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_hh1ee")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfq5e7nx5svht"]
+
+[ext_resource type="Texture2D" uid="uid://cp0ixghqrekxm" path="res://assests/canada_map.png" id="1_0d7rr"]
+[ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
+[ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
+
+[sub_resource type="Curve2D" id="Curve2D_h7x0o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6.72585, 13.4815, 0, 0, 0, 0, 5.38903, 14.716, 0, 0, 0, 0, 4.74848, 12.6914, 0, 0, 0, 0, 3.35596, 12.8395, 0, 0, 0, 0, 0.431679, 11.9012, 0, 0, 0, 0, -2.3812, 11.3086, 0, 0, 0, 0, -2.3812, 11.3086, 0, 0, 0, 0, -5.52829, 10.5679, 0, 0, 0, 0, -9.45518, 12.642, 0, 0, 0, 0, -9.45518, 12.642, 0, 0, 0, 0, -11.9896, 8.14815, 0, 0, 0, 0, -9.56658, 4.64197, 0, 0, 0, 0, -5.61184, 8, 0, 0, 0, 0, -4.52567, 4.98765, 0, 0, 0, 0, -1.12794, 4.59259, 0, 0, 0, 0, 1.71279, 3.7037, 0, 0, 0, 0, 4.97128, 2.91358, 0, 0, 0, 0, 7.0322, 4.14815, 0, 0, 0, 0, 8.75892, 7.11111, 0, 0, 0, 0, 12.9365, 9.77778, 0, 0, 0, 0, 14.9138, 13.0864, 0, 0, 0, 0, 11.7668, 11.7037, 0, 0, 0, 0, 9.09312, 12.0494, 0, 0, 0, 0, 10.1236, 12.9383, 0, 0, 0, 0, 10.3742, 15.0123, 0, 0, 0, 0, 8.11836, 13.8765, 0, 0, 0, 0, 6.72585, 13.4815)
+}
+point_count = 27
+
+[node name="MiniMap" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(574.5, 324)
+scale = Vector2(35.9063, 20.25)
+texture = ExtResource("1_0d7rr")
+
+[node name="Path2D" type="Path2D" parent="Sprite2D"]
+curve = SubResource("Curve2D_h7x0o")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
+position = Vector2(6.72585, 13.4815)
+rotation = 2.39594
+script = ExtResource("2_2cbrk")
+
+[node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
+rotation = -2.39594
+scale = Vector2(1, 1)

@@ -1,3 +1,7 @@
+PathFollow2D
+Path2D
+TileMapLayer
 Sprite2D
+TileMap
 CollisionShape2D
 Area2D
