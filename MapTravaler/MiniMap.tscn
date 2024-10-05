@@ -23,9 +23,8 @@ curve = SubResource("Curve2D_h7x0o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
 position = Vector2(6.72585, 13.4815)
-rotation = 2.39594
+rotation = 2.39597
 script = ExtResource("2_2cbrk")
 
 [node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
 rotation = -2.39594
-scale = Vector2(1, 1)
