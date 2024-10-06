@@ -2,8 +2,8 @@ extends PathFollow2D
 
 var speed = 0.01
 var is_speeding_up = false
-var is_slowing_down = false
-var is_stopped = false
+@export var is_slowing_down = false
+@export var is_stopped = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
