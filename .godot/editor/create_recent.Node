@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-RichTextLabel
+HBoxContainer
 HSlider
+RichTextLabel
 VSlider
 Container
-=======
 Sprite2D
->>>>>>> 8e8307cc4ddd14faf3c2581aeab720a8cbc6a9f0
-=======
-HBoxContainer
 Control
 Container
 Label
@@ -16,17 +11,4 @@ TextureRect
 Node
 Sprite2D
 RichTextLabel
->>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 AnimationPlayer
-AnimatedSprite2D
-Node2D
-Timer
-Panel
-CanvasLayer
-Button
-<<<<<<< HEAD
-ItemList
-CollisionShape2D
-Area2D
-=======
->>>>>>> 87e64406661c4991c47b4402d32c26f252275390

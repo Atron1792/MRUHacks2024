@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgmrf1bpq4bf1"]
+[gd_scene load_steps=9 format=3 uid="uid://b7jtppebukxk"]
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 [ext_resource type="Script" path="res://UI/UI Scripts/gathering.gd" id="5_6ymbr"]
-[ext_resource type="PackedScene" uid="uid://ymg3j058leih" path="res://UI/overlay.tscn" id="5_enad1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
 atlas = ExtResource("1_08ckp")
@@ -32,8 +31,8 @@ point_count = 28
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(608, 376)
-scale = Vector2(15, 8.905)
+position = Vector2(578.5, 324.5)
+scale = Vector2(17.9219, 10.6393)
 sprite_frames = SubResource("SpriteFrames_h33yb")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
@@ -144,8 +143,6 @@ layout_mode = 2
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/CanvasLayer/Container"]
 layout_mode = 2
-
-[node name="Overlay" parent="." instance=ExtResource("5_enad1")]
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="drag_ended" from="Control/CanvasLayer/Panel/HSlider" to="Control" method="_on_h_slider_drag_ended"]

@@ -22,21 +22,20 @@ var danger = 0;
 
 #Ready Initilization
 func _ready():
-<<<<<<< HEAD
 	get_node("CanvasLayer/Oil Text").size.x = 100
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 150
 	get_node("CanvasLayer/Wood Text").size.x = 100
 	get_node("CanvasLayer/Stone Text").size.x = 100
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
+	
 	#Text positioning (x,y)
 	$"CanvasLayer/Oil Text".position = Vector2(100,0)
 	$"CanvasLayer/Food Text".position = Vector2(200,0)
 	$"CanvasLayer/Population Text".position = Vector2(320,0)
 	$"CanvasLayer/Wood Text".position = Vector2(500,0)
 	$"CanvasLayer/Stone Text".position = Vector2(600,0)
-=======
-	
+
 	get_node("CanvasLayer/HBoxContainer/Oil Text").size.x = 100
 	get_node("CanvasLayer/HBoxContainer/Food Text").size.x = 100
 	get_node("CanvasLayer/HBoxContainer/Population Text").size.x = 150
@@ -48,7 +47,6 @@ func _ready():
 	$"CanvasLayer/HBoxContainer/Population Text".position = Vector2(320,0)
 	$"CanvasLayer/HBoxContainer/Wood Text".position = Vector2(500,0)
 	$"CanvasLayer/HBoxContainer/Steel Text".position = Vector2(600,0)
->>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 	
 	#rationing init
 	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
@@ -127,13 +125,11 @@ func resource_texts():
 	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Wood Text/Wood/texture")
 	$"CanvasLayer/HBoxContainer/Wood Text".text = "     Wood: " + str(WoodInit)
 	
-<<<<<<< HEAD
+
 	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
 	$"CanvasLayer/Stone Text".text = "     Steel: " + str(SteelInit)
-=======
 	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Steel Text/Steel/texture")
 	$"CanvasLayer/HBoxContainer/Steel Text".text = "     Steel: " + str(SteelInit)
->>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 
 func add_Oil(Oil):
 	OilInit += Oil

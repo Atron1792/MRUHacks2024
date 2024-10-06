@@ -1,19 +1,7 @@
-res://UI/UI Scripts/oil_init.gd
-res://MapTravaler/path_follow_2d.gd
-res://UI/UI Scripts/shops.gd
 res://MapTravaler/MiniMap.tscn
 res://UI/UI Scripts/gathering.gd
-res://UI/UI Scripts/initresorce.gd
-<<<<<<< HEAD
-res://UserPOV.tscn
-=======
-res://scenes/main_menu.gd
-res://scenes/Main Menu.tscn
-res://scenes/Settings Menu.tscn
-res://scenes/settings_menu.gd
-res://scenes/Main Menu2.tscn
-res://UI/overlay.tscn
-res://scenes/guide_menu.tscn
+res://UI/UI Scripts/oil_init.gd
+res://scenes/main_scene.tscn
 res://scenes/main_menu.tscn
-res://scenes/guide_menu.gd
->>>>>>> 87e64406661c4991c47b4402d32c26f252275390
+res://node_2d.tscn
+res://MapTravaler/MiniMap2.tscn
