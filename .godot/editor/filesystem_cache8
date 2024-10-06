@@ -1,32 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728231514
+::res://::1728232452
 animatedRail.tscn::PackedScene::8462527959526921477::1728218706::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
+ATTRIBUTION.md::TextFile::-1::1728232357::0::1::::<><>::
 icon.png::CompressedTexture2D::3971236798686069491::1728222070::1728230245::1::::<><>::
 node_2d.tscn::PackedScene::2869097939060674710::1728230173::0::1::::<><>::
-UserPOV.tscn::PackedScene::2562216687977686649::1728230964::0::1::::<><>::uid://dgmrf1bpq4bf1::::res://MapTravaler/MiniMap.tscn<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
 trainmovement.gd::GDScript::-1::1728218706::0::1::::<>Node2D<>::
+UserPOV.tscn::PackedScene::2562216687977686649::1728230964::0::1::::<><>::uid://dgmrf1bpq4bf1::::res://MapTravaler/MiniMap.tscn<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
 ::res://assests/::1728230245
 guide.png::CompressedTexture2D::6938476541345249790::1728230173::1728230245::1::::<><>::
 main_overlay.png::CompressedTexture2D::3772461331398535198::1728218706::1728230245::1::::<><>::
 mruhacks2024.png::CompressedTexture2D::8710102062379773067::1728230173::1728230245::1::::<><>::
 title.png::CompressedTexture2D::6161153950387758693::1728218706::1728230245::1::::<><>::
 winter_express.png::CompressedTexture2D::8200162078932182543::1728230173::1728230245::1::::<><>::
-::res://MapTravaler/::1728231528
-MiniMap.tscn::PackedScene::7606210131658731216::1728231528::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd<>res://UI/UI Scripts/gathering.gd<>uid://ymg3j058leih::::res://UI/overlay.tscn
+::res://MapTravaler/::1728232459
+MiniMap.tscn::PackedScene::7606210131658731216::1728232459::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd<>res://UI/UI Scripts/gathering.gd<>uid://ymg3j058leih::::res://UI/overlay.tscn
 path_follow_2d.gd::GDScript::-1::1728230516::0::1::::<>PathFollow2D<>::
 TrainIcon.tscn::PackedScene::4503333096098676775::1728218706::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
-::res://pics/::1728231561
+::res://pics/::1728232487
 main_menu.png::CompressedTexture2D::5688446722602248969::1728231562::1728231577::1::::<><>::
-::res://scenes/::1728231528
+main_scene.png::CompressedTexture2D::8871559366558153139::1728232488::1728232490::1::::<><>::
+::res://scenes/::1728232459
 guide_menu.gd::GDScript::-1::1728218706::0::1::::<>Node<>::
 guide_menu.tscn::PackedScene::6318776994797701631::1728230173::0::1::::<><>::res://scenes/guide_menu.gd<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>uid://c54bxvk2ynxkg::::res://assests/guide.png
 main_menu.gd::GDScript::-1::1728218706::0::1::::<>Node<>::
-main_menu.tscn::PackedScene::3619041523292420023::1728231528::0::1::::<><>::res://scenes/main_menu.gd<>uid://ct1rknbyn30ar::::res://assests/title.png<>uid://do3hqa6f4bbn0::::res://assests/winter_express.png
-main_scene.tscn::PackedScene::2493069451338474383::1728231528::0::1::::<><>::uid://dgmrf1bpq4bf1::::res://MapTravaler/MiniMap.tscn<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://scenes/shmoving_rail.gd
+main_menu.tscn::PackedScene::3619041523292420023::1728232459::0::1::::<><>::res://scenes/main_menu.gd<>uid://ct1rknbyn30ar::::res://assests/title.png<>uid://do3hqa6f4bbn0::::res://assests/winter_express.png
+main_scene.tscn::PackedScene::2493069451338474383::1728232459::0::1::::<><>::uid://dgmrf1bpq4bf1::::res://MapTravaler/MiniMap.tscn<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://scenes/shmoving_rail.gd
 shmoving_rail.gd::GDScript::-1::1728230488::0::1::::<>Node2D<>::
-::res://UI/::1728231527
-overlay.tscn::PackedScene::1709719597285291151::1728231527::0::1::::<><>::uid://bt0n5fli1j3ag::::res://assests/main_overlay.png
-::res://UI/UI Scripts/::1728231331
-gathering.gd::GDScript::-1::1728230280::0::1::::<>Node<>::
+::res://UI/::1728232458
+overlay.tscn::PackedScene::1709719597285291151::1728232458::0::1::::<><>::uid://bt0n5fli1j3ag::::res://assests/main_overlay.png
+::res://UI/UI Scripts/::1728232458
+gathering.gd::GDScript::-1::1728232458::0::1::::<>Node<>::
 initresorce.gd::GDScript::-1::1728230300::0::1::::<>Node<>::
-oil_init.gd::GDScript::-1::1728231331::0::1::::<>Node<>::
+oil_init.gd::GDScript::-1::1728232458::0::1::::<>Node<>::
