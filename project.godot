@@ -15,6 +15,10 @@ run/main_scene="res://MapTravaler/MiniMap.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PathFollow2d="*res://MapTravaler/path_follow_2d.gd"
+
 [dotnet]
 
 project/assembly_name="MRUHacks2024"

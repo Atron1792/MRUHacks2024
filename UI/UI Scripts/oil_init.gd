@@ -8,8 +8,8 @@ extends Node
 
 #Init variables do not change
 @export var OilInit = 100
-@export var FoodInit = 125
-@export var PeopleInit = 50
+@export var FoodInit = 5
+@export var PeopleInit = 10
 @export var WoodInit = 0
 @export var StoneInit = 0
 
@@ -37,10 +37,19 @@ func _process(_delta):
 
 
 func depletion_resource():
-	OilInit -= 5
-	FoodInit -= round(PeopleInit*0.5)
+	if PathFollow2d.speed >= 0:
+		OilInit -= 5
+	elif PathFollow2d.speed <= 0:
+		OilInit -=1 
+	
+	if OilInit == 0:
+		PeopleInit -= (round(randf_range(0, 0.5)*PeopleInit))
+	if FoodInit > 0:
+		FoodInit -= round(PeopleInit*0.5)
+	else:
+		FoodInit = 0
 	if FoodInit > (PeopleInit*1.25):
-		PeopleInit += 1
+		PeopleInit += round(randf_range(0, 0.1)*PeopleInit)
 	elif FoodInit < (PeopleInit*0.99):
 		PeopleInit -= round(randf_range(0, .5)*PeopleInit)
 
@@ -70,5 +79,5 @@ func _on_timer_timeout() -> void:
 	depletion_resource()
 	
 func game_end():
-	if PeopleInit <= 0:
-		pass
+	if PeopleInit <= 1:
+		$"../Sprite2D/Path2D/PathFollow2D".speed = 0

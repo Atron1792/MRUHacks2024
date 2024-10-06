@@ -1,3 +1,4 @@
 res://MapTravaler/MiniMap.tscn
+res://MapTravaler/path_follow_2d.gd
 res://UI/UI Scripts/oil_init.gd
-res://MapTravaler/TrainIcon.tscn
+res://UI/UI Scripts/resources.gd
