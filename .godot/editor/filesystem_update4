@@ -4,3 +4,4 @@ res://UI/UI Scripts/oil_init.gd
 res://UI/overlay.tscn
 res://scenes/main_scene.tscn
 res://node_2d.tscn
+res://scenes/guide_menu.tscn

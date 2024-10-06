@@ -30,7 +30,7 @@ func _ready():
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
 	
 	#Text positioning (x,y)
-	$"CanvasLayer/Oil Text".position = Vector2(72,32)
+	$"CanvasLayer/Oil Text".position = Vector2(104,32)
 	$"CanvasLayer/Food Text".position = Vector2(352,32)
 	$"CanvasLayer/Population Text".position = Vector2(656,32)
 	$"CanvasLayer/Wood Text".position = Vector2(904,18)
