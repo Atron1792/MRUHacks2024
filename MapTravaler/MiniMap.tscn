@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oydaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2esn"]
 atlas = ExtResource("1_08ckp")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 48, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h33yb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oydaa")
+"texture": SubResource("AtlasTexture_m2esn")
 }],
 "loop": true,
 "name": &"default",
