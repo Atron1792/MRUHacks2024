@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 Button
 Panel
 ItemList
 CanvasLayer
 AnimatedSprite2D
+=======
+>>>>>>> 556e6e81d0195e605267829e83d9ad9a2168fc01
 Node2D
+CollisionShape2D
+AnimatedSprite2D
+Area2D
 RichTextLabel
 Timer
 Control
@@ -12,4 +18,7 @@ Path2D
 TileMapLayer
 Sprite2D
 TileMap
+<<<<<<< HEAD
 CollisionShape2D
+=======
+>>>>>>> 556e6e81d0195e605267829e83d9ad9a2168fc01

@@ -1,5 +1,14 @@
 res://MapTravaler/MiniMap.tscn
 res://MapTravaler/path_follow_2d.gd
 res://UI/UI Scripts/oil_init.gd
+<<<<<<< HEAD
+res://MapTravaler/TrainIcon.tscn
+res://UserPOV.tscn
+res://train.gd
+=======
 res://UI/UI Scripts/resources.gd
+<<<<<<< HEAD
 res://UI/UI Scripts/shops.gd
+=======
+>>>>>>> 72845e98dc041000d9fcfc7881831d3ae366012e
+>>>>>>> 556e6e81d0195e605267829e83d9ad9a2168fc01
