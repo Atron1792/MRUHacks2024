@@ -1,4 +1,3 @@
-
 Panel
 RichTextLabel
 Button
@@ -7,9 +6,9 @@ HBoxContainer
 HSlider
 VSlider
 Sprite2D
-
 Control
 Label
+TextureRect
 Node
 Sprite2D
 AnimationPlayer
