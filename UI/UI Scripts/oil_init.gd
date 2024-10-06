@@ -38,24 +38,25 @@ func _process(_delta):
 	game_end()
 
 func depletion_resource():
-	if $"../Sprite2D/Path2D/PathFollow2D".speed > 0:
-		OilInit -= 5
-	elif $"../Sprite2D/Path2D/PathFollow2D".speed <= 0:
-		OilInit -= 2
-	if FoodInit > 0:
-		FoodInit -= round(PeopleInit*0.5)
-	else:
-		FoodInit = 0
-	if FoodInit > (PeopleInit*1.25):
-		PeopleInit += 1
-	elif FoodInit < (PeopleInit*0.99):
-		if PeopleInit > 0:
-			if PeopleInit >= 5:
-				PeopleInit -= round(randf_range(0, .5)*PeopleInit)
-			else:
-				PeopleInit -= 1 
+	if !($CanvasLayer/Panel.visible):
+		if $"../Sprite2D/Path2D/PathFollow2D".speed > 0:
+			OilInit -= 5
+		elif $"../Sprite2D/Path2D/PathFollow2D".speed <= 0:
+			OilInit -= 2
+		if FoodInit > 0:
+			FoodInit -= round(PeopleInit*0.5)
 		else:
-			PeopleInit = 0
+			FoodInit = 0
+		if FoodInit > (PeopleInit*1.25):
+			PeopleInit += 1
+		elif FoodInit < (PeopleInit*0.99):
+			if PeopleInit > 0:
+				if PeopleInit >= 5:
+					PeopleInit -= round(randf_range(0, .5)*PeopleInit)
+				else:
+					PeopleInit -= 1 
+			else:
+				PeopleInit = 0
 
 func resource_texts():
 	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
@@ -90,7 +91,7 @@ func game_end():
 func stop_train():
 	$CanvasLayer/Panel.size.x = 600
 	$CanvasLayer/Panel.size.y = 400
-	$CanvasLayer/Panel.position = Vector2(300, 100)
+	$CanvasLayer/Panel.position = Vector2(300, 100) 
 	$CanvasLayer/Panel.modulate = Color(0, 1, 1, 1)
 	$CanvasLayer/Panel.modulate.a = 1.60
 	if $"../Sprite2D/Path2D/PathFollow2D".speed == 0:
@@ -108,15 +109,37 @@ func stop_train():
 	$CanvasLayer/Panel/Info_text.size = Vector2(400, 200)
 	$CanvasLayer/Panel/Info_text.position = Vector2(100, 100)
 	stop_manager()
-
+ 
 #Stop management for resources
 func stop_manager():
 	$CanvasLayer/Panel/HSlider.editable = true
 	$CanvasLayer/Panel/HSlider.size = Vector2(250, 100)
-	$CanvasLayer/Panel/HSlider.set_max(round((PeopleInit/10)+4))
+	$CanvasLayer/Panel/HSlider.set_max(round(PeopleInit/10))
 	$CanvasLayer/Panel/HSlider.position = Vector2(150,200)
 	$CanvasLayer/Panel/RichTextLabel.size.x = 250
 	$CanvasLayer/Panel/RichTextLabel.position = Vector2(150, 200)
+	$CanvasLayer/Panel/Button.position = Vector2(200, 300)
+	$CanvasLayer/Panel/Button.size = Vector2(100, 50)
+	$CanvasLayer/Panel/Button.modulate = Color(255,255,255, 0.75)
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: " + str($CanvasLayer/Panel/HSlider.value)
+
+
+
+
+func _on_button_pressed() -> void:
+	$CanvasLayer/Panel.visible = false
+	var oiladded = round(randi_range(0,50)*($CanvasLayer/Panel/HSlider.value/10))
+	var foodadded = round(randi_range(0,50)*($CanvasLayer/Panel/HSlider.value/10)*($"../Sprite2D/Path2D/PathFollow2D".position.y/100)+absi(($"../Sprite2D/Path2D/PathFollow2D".position.x-500)/100))
+	var pepsjoin = round(randi_range(0,20)*($CanvasLayer/Panel/HSlider.value/10)*($"../Sprite2D/Path2D/PathFollow2D".position.y/100)+(($"../Sprite2D/Path2D/PathFollow2D".position.x-200)/100)*randi_range(-1,1))
+	
+	if PeopleInit >= 9999:
+		pepsjoin = 0
+	$CanvasLayer/Panel/RichTextLabel.text = "Scavengers Found: \nOil: " + str(oiladded) + "\nFood: " + str(foodadded) + "\nPeople: " + str(pepsjoin)
+	$CanvasLayer/Panel/RichTextLabel.size = Vector2(300,300)
+	$CanvasLayer/Panel.visible = true
+	
+	add_Oil(oiladded)
+	add_Peps(pepsjoin)
+	add_Food(foodadded)
