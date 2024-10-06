@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbrwqwac5ie6b"]
+
+[ext_resource type="PackedScene" uid="uid://dfq5e7nx5svht" path="res://MapTravaler/MiniMap.tscn" id="1_h0rp2"]
+[ext_resource type="Script" path="res://user_pov.gd" id="2_h4242"]
+[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="3_8tqnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8es0"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(0, 0, 96, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mr3jx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8es0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwmts"]
+size = Vector2(673.5, 163)
+
+[node name="UserPov" type="Node2D"]
+
+[node name="MiniMap" parent="." instance=ExtResource("1_h0rp2")]
+position = Vector2(2, 0)
+scale = Vector2(0.4, 0.5)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 530)
+script = ExtResource("2_h4242")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Area2D"]
+texture_filter = 1
+position = Vector2(336, 0)
+scale = Vector2(7, 10.298)
+sprite_frames = SubResource("SpriteFrames_mr3jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(336.25, 0)
+shape = SubResource("RectangleShape2D_xwmts")
+
+[node name="Timer" type="Timer" parent="Node2D"]

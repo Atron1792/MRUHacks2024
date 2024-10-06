@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oydaa"]
 atlas = ExtResource("1_08ckp")
-region = Rect2(0, 51, 64, 61)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h33yb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xn88n")
+"texture": SubResource("AtlasTexture_oydaa")
 }],
 "loop": true,
 "name": &"default",
@@ -22,30 +22,29 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_h7x0o"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, 4.12142, 12.9178, 0, 0, 0, 0, -0.0887671, 12.1162, 0, 0, 0, 0, -2.59966, 11.3974, 0, 0, 0, 0, -5.71927, 10.5957, 0, 0, 0, 0, -8.25553, 10.0428, 0, 0, 0, 0, -11.6541, 10.8998, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.136, 5.0392, 0, 0, 0, 0, -9.29539, 5.23271, 0, 0, 0, 0, -7.1903, 7.05724, 0, 0, 0, 0, -5.71927, 8.57768, 0, 0, 0, 0, -4.57795, 7.08488, 0, 0, 0, 0, -2.72648, 6.33848, 0, 0, 0, 0, -0.240943, 5.14978, 0, 0, 0, 0, 1.63589, 4.92862, 0, 0, 0, 0, 3.10692, 6.47671, 0, 0, 0, 0, 5.9729, 6.86373, 0, 0, 0, 0, 9.21931, 8.24594, 0, 0, 0, 0, 10.7411, 10.3193, 0, 0, 0, 0, 12.4911, 11.5356, 0, 0, 0, 0, 10.5128, 11.508, 0, 0, 0, 0, 9.9041, 12.8902, 0, 0, 0, 0, 8.33162, 12.8625, 0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, -4.04533, 4.40338, 0, 0, 0, 0, 6.3787, 14.4383)
+"points": PackedVector2Array(0, 0, 0, 0, 6.72585, 13.4815, 0, 0, 0, 0, 5.38903, 14.716, 0, 0, 0, 0, 4.74848, 12.6914, 0, 0, 0, 0, 3.35596, 12.8395, 0, 0, 0, 0, 0.431679, 11.9012, 0, 0, 0, 0, -2.3812, 11.3086, 0, 0, 0, 0, -2.3812, 11.3086, 0, 0, 0, 0, -5.52829, 10.5679, 0, 0, 0, 0, -9.45518, 12.642, 0, 0, 0, 0, -9.45518, 12.642, 0, 0, 0, 0, -11.9896, 8.14815, 0, 0, 0, 0, -9.56658, 4.64197, 0, 0, 0, 0, -5.61184, 8, 0, 0, 0, 0, -4.52567, 4.98765, 0, 0, 0, 0, -1.12794, 4.59259, 0, 0, 0, 0, 1.71279, 3.7037, 0, 0, 0, 0, 4.97128, 2.91358, 0, 0, 0, 0, 7.0322, 4.14815, 0, 0, 0, 0, 8.75892, 7.11111, 0, 0, 0, 0, 12.9365, 9.77778, 0, 0, 0, 0, 14.9138, 13.0864, 0, 0, 0, 0, 11.7668, 11.7037, 0, 0, 0, 0, 9.09312, 12.0494, 0, 0, 0, 0, 10.1236, 12.9383, 0, 0, 0, 0, 10.3742, 15.0123, 0, 0, 0, 0, 8.11836, 13.8765, 0, 0, 0, 0, 6.72585, 13.4815)
 }
-point_count = 28
+point_count = 27
 
 [node name="MiniMap" type="Node2D"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(578.5, 324.5)
-scale = Vector2(17.9219, 10.6393)
+position = Vector2(574.5, 324)
+scale = Vector2(35.9063, 20.25)
 sprite_frames = SubResource("SpriteFrames_h33yb")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
-position = Vector2(0.167393, -21.0339)
-scale = Vector2(2.2, 3.4)
 curve = SubResource("Curve2D_h7x0o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
-position = Vector2(6.3787, 14.4383)
+position = Vector2(6.72585, 13.4815)
+rotation = 2.39597
 rotates = false
 script = ExtResource("2_2cbrk")
 
 [node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
-scale = Vector2(0.02, 0.02)
+rotation = -2.39594
 
 [node name="Control" type="Control" parent="."]
 unique_name_in_owner = true
@@ -112,20 +111,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HSlider" type="HSlider" parent="Control/CanvasLayer/Panel"]
 layout_mode = 0
-offset_right = 8.0
+offset_right = 132.0
 offset_bottom = 16.0
-
-[node name="Button" type="Button" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="drag_ended" from="Control/CanvasLayer/Panel/HSlider" to="Control" method="_on_h_slider_drag_ended"]
-[connection signal="pressed" from="Control/CanvasLayer/Panel/Button" to="Control" method="_on_button_pressed"]

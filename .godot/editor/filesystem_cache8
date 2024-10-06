@@ -1,17 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728181344
-icon.svg::CompressedTexture2D::658707289000408551::1728161415::1728181344::1::::<><>::
-node_2d.tscn::PackedScene::6880185265062693508::1728163805::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
-trainmovement.gd::GDScript::-1::1728181231::0::1::::<>Node2D<>::
-UserPOV.tscn::PackedScene::2493069451338474383::1728181231::0::1::::<><>::uid://dfq5e7nx5svht::::res://MapTravaler/MiniMap.tscn<>res://trainmovement.gd<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
-::res://assests/::1728181344
-mruhacks2024.png::CompressedTexture2D::8710102062379773067::1728186081::1728196567::1::::<><>::
-::res://MapTravaler/::1728181231
-MiniMap.tscn::PackedScene::7545066668208533861::1728181231::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd
-path_follow_2d.gd::GDScript::-1::1728181231::0::1::::<>PathFollow2D<>::
-TrainIcon.tscn::PackedScene::4503333096098676775::1728173573::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
-::res://UI/::1728161415
-::res://UI/UI Scripts/::1728181231
-gathering.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
-initresorce.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
-oil_init.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
+::res://::1728186373
+icon.svg::CompressedTexture2D::658707289000408551::1728177288::1728177323::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728177288::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+animated_sprite_2d_2.gd::GDScript::-1::1728186196::0::1::::<>AnimatedSprite2D<>::
+trainmovement.gd::GDScript::-1::1728183621::0::1::::<>Node2D<>::
+UserPOV.tscn::PackedScene::2493069451338474383::1728186200::0::1::::<><>::uid://dfq5e7nx5svht::::res://MapTravaler/MiniMap.tscn<>uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://animated_sprite_2d_2.gd
+::res://assests/::1728186373
+mruhacks2024.png::CompressedTexture2D::8710102062379773067::1728186373::1728186940::1::::<><>::
+::res://MapTravaler/::1728186416
+MiniMap.tscn::PackedScene::7545066668208533861::1728186373::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png<>res://MapTravaler/path_follow_2d.gd<>uid://b5fpidkfeyhv8::::res://MapTravaler/TrainIcon.tscn<>res://UI/UI Scripts/oil_init.gd
+path_follow_2d.gd::GDScript::-1::1728186416::0::1::::<>PathFollow2D<>::
+TrainIcon.tscn::PackedScene::4503333096098676775::1728177288::0::1::::<><>::uid://dwdidxk1ip3r8::::res://assests/mruhacks2024.png
+::res://UI/::1728177288
+::res://UI/UI Scripts/::1728186373
+gathering.gd::GDScript::-1::1728186373::0::1::::<>Node<>::
+initresorce.gd::GDScript::-1::1728178962::0::1::::<>Node<>::
+oil_init.gd::GDScript::-1::1728186373::0::1::::<>Node<>::
