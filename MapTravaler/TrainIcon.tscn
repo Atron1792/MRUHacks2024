@@ -2,18 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_8mnnv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv0pj"]
-size = Vector2(163, 164)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50dut"]
+size = Vector2(6714.29, 6571.43)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o71o2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k7wf"]
 atlas = ExtResource("1_8mnnv")
-region = Rect2(32, 32, 16, 16)
+region = Rect2(80, 80, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xkysn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o71o2")
+"texture": SubResource("AtlasTexture_6k7wf")
 }],
 "loop": true,
 "name": &"default",
@@ -23,11 +23,11 @@ animations = [{
 [node name="TrainIcon" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.19209e-07, 8.88178e-16)
+position = Vector2(0.499999, 2)
 scale = Vector2(0.007, 0.007)
-shape = SubResource("RectangleShape2D_iv0pj")
+shape = SubResource("RectangleShape2D_50dut")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.0675, 0.0675)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xkysn")
