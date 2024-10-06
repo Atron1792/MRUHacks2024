@@ -9,7 +9,11 @@ extends Node
 #Init variables do not change
 @export var OilInit = 100
 @export var FoodInit = 125
+<<<<<<< HEAD
 @export var PeopleInit = 50
+=======
+@export var PeopleInit = 100
+>>>>>>> 0959c6a1b7ad979623dc456c20b4d9c9448b9505
 @export var WoodInit = 0
 @export var StoneInit = 0
 
@@ -18,6 +22,7 @@ extends Node
 
 #Ready Initilization
 func _ready():
+	
 	get_node("CanvasLayer/Oil Text").size.x = 100
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 130

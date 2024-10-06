@@ -76,6 +76,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Game OVer" type="RichTextLabel" parent="Control/CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 text = "Game Over"
@@ -83,5 +84,16 @@ text = "Game Over"
 [node name="Timer" type="Timer" parent="Control/CanvasLayer"]
 wait_time = 5.0
 autostart = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Control"]
+
+[node name="ItemList" type="ItemList" parent="Control/CanvasLayer2"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control/CanvasLayer2"]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
