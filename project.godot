@@ -22,10 +22,7 @@ resce="*res://UI/UI Scripts/initresorce.gd"
 
 [display]
 
-window/size/mode=2
-window/size/resizable=false
-window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+window/stretch/mode="viewport"
 
 [dotnet]
 
