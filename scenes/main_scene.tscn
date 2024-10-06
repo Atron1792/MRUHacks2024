@@ -110,21 +110,42 @@ script = ExtResource("2_kpc2d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="shmovingRail"]
 texture_filter = 1
-position = Vector2(661, 532)
+position = Vector2(664, 530)
 scale = Vector2(5, 10.355)
 sprite_frames = SubResource("SpriteFrames_cki2h")
 animation = &"rail_animation"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="shmovingRail"]
 texture_filter = 1
-position = Vector2(818, 532)
+position = Vector2(816, 530)
 scale = Vector2(5, 10.355)
 sprite_frames = SubResource("SpriteFrames_cki2h")
 animation = &"rail_animation"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="shmovingRail"]
 texture_filter = 1
-position = Vector2(740, 533)
+position = Vector2(744, 534)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+animation = &"rail_animation"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(896, 534)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+animation = &"rail_animation"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(976, 530)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+animation = &"rail_animation"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(1056, 534)
 scale = Vector2(5, 10.355)
 sprite_frames = SubResource("SpriteFrames_cki2h")
 animation = &"rail_animation"
