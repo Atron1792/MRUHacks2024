@@ -32,5 +32,3 @@ func _process(delta):
 		else:
 			speed = speed + 0.001
 	progress_ratio += delta * speed
-	
-	print(speed)

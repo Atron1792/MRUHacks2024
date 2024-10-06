@@ -15,7 +15,7 @@ extends Node
 var fraction_oil = 1
 var fraction_food = 1
 
-@export var SteelInit = resce.SteelInit
+var SteelInit = resce.SteelInit
 var danger = 0;
 
 #GUI Resources background area element
@@ -30,45 +30,44 @@ func _ready():
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
 	
 	#Text positioning (x,y)
-	$"CanvasLayer/Oil Text".position = Vector2(104,32)
-	$"CanvasLayer/Food Text".position = Vector2(352,32)
-	$"CanvasLayer/Population Text".position = Vector2(656,32)
+	$"CanvasLayer/Oil Text".position = Vector2(104,28)
+	$"CanvasLayer/Food Text".position = Vector2(352,28)
+	$"CanvasLayer/Population Text".position = Vector2(656,28)
 	$"CanvasLayer/Wood Text".position = Vector2(904,18)
-	$"CanvasLayer/Steel Text".position = Vector2(904,48)
+	$"CanvasLayer/Steel Text".position = Vector2(904,44)
 
 	
 	#rationing init
 	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
-	$CanvasLayer/Container/HSlider3.position = Vector2(10, 50)
+	$CanvasLayer/Container/HSlider3.position = Vector2(250,44)
 	$CanvasLayer/Container/HSlider3.set_max(4)
 	$CanvasLayer/Container/HSlider3.set_min(1)
 	$CanvasLayer/Container/HSlider3.set_value_no_signal(4)
 	
 	$CanvasLayer/Container/HSlider2.size = Vector2(50, 25)
-	$CanvasLayer/Container/HSlider2.position = Vector2(10, 100)
+	$CanvasLayer/Container/HSlider2.position = Vector2(500,44)
 	$CanvasLayer/Container/HSlider2.set_max(4)
 	$CanvasLayer/Container/HSlider2.set_min(1)
 	$CanvasLayer/Container/HSlider2.set_value_no_signal(4)
 	
-	$CanvasLayer/Container/FractionOil.text = str(1)
-	$CanvasLayer/Container/FractionOil.size = Vector2(50, 25)
-	$CanvasLayer/Container/FractionOil.position = Vector2(10, 30)
+	$CanvasLayer/Container/FractionOil.text = "Ration Oil: " + str(1)
+	$CanvasLayer/Container/FractionOil.size = Vector2(1, 25)
+	$CanvasLayer/Container/FractionOil.position = Vector2(150,44)
 	
-	
-	$CanvasLayer/Container/RichTextLabel2.text = str(1)
-	$CanvasLayer/Container/RichTextLabel2.size = Vector2(50, 25)
-	$CanvasLayer/Container/RichTextLabel2.position = Vector2(10, 80)
+	$CanvasLayer/Container/RichTextLabel2.text = "Ration Food: " + str(1)
+	$CanvasLayer/Container/RichTextLabel2.size = Vector2(150, 25)
+	$CanvasLayer/Container/RichTextLabel2.position = Vector2(370,44)
 
 
-func _on_h_slider_3_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_3_drag_ended(_value_changed: bool) -> void:
 	fraction_oil = $CanvasLayer/Container/HSlider3.value/4
-	$CanvasLayer/Container/FractionOil.text = str(fraction_oil)
+	$CanvasLayer/Container/FractionOil.text = "Ration Oil: " + str(fraction_oil)
 
 
 
-func _on_h_slider_2_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_2_drag_ended(_value_changed: bool) -> void:
 	fraction_food = $CanvasLayer/Container/HSlider2.value/4
-	$CanvasLayer/Container/RichTextLabel2.text = str(fraction_food)
+	$CanvasLayer/Container/RichTextLabel2.text = "Ration Food: " + str(fraction_food)
 
 func _process(_delta):
 	stop_train()
@@ -102,22 +101,19 @@ func depletion_resource():
 				PeopleInit = round(randf_range(0, .1)*PeopleInit)
 
 func resource_texts():
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Oil Text/Oil/texture")
+	#$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Oil Text/Oil/texture")
 	$"CanvasLayer/Oil Text".text = "     Oil: " + str(OilInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Food Text/Food/texture")
+	#$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Food Text/Food/texture")
 	$"CanvasLayer/Food Text".text = "     Food: " + str(FoodInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Population Text/Population/texture")
+	#$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Population Text/Population/texture")
 	$"CanvasLayer/Population Text".text = "     Population: " + str(PeopleInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Wood Text/Wood/texture")
+	#$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Wood Text/Wood/texture")
 	$"CanvasLayer/Wood Text".text = "     Wood: " + str(WoodInit)
 	
-
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
-	$"CanvasLayer/Steel Text".text = "     Steel: " + str(SteelInit)
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
+	#$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
 	$"CanvasLayer/Steel Text".text = "     Steel: " + str(SteelInit)
 
 func add_Oil(Oil):
@@ -160,7 +156,7 @@ func stop_train():
 	$CanvasLayer/Panel/Stop_text.size.x = 500
 	$CanvasLayer/Panel/Stop_text.position.x = 175
 	
-	$CanvasLayer/Panel/Info_text.text = "You Have Stopped Leave before the people freeze\n\n Area Danger Level: " + str(danger)
+	$CanvasLayer/Panel/Info_text.text = "You have stopped, leave before the people freeze\n\n Area Danger Level: " + str(danger)
 	$CanvasLayer/Panel/Info_text.size = Vector2(400, 200)
 	$CanvasLayer/Panel/Info_text.position = Vector2(100, 100)
 	stop_manager()
@@ -168,14 +164,17 @@ func stop_train():
 #Stop management for resources
 func stop_manager():
 	$CanvasLayer/Panel/HSlider.editable = true
-	$CanvasLayer/Panel/HSlider.size = Vector2(250, 100)
+	$CanvasLayer/Panel/HSlider.size = Vector2(275, 75)
 	$CanvasLayer/Panel/HSlider.set_max(round(PeopleInit/10))
-	$CanvasLayer/Panel/HSlider.position = Vector2(150,200)
+	$CanvasLayer/Panel/HSlider.position = Vector2(120,290)
+	
 	$CanvasLayer/Panel/RichTextLabel.size.x = 250
 	$CanvasLayer/Panel/RichTextLabel.position = Vector2(150, 200)
-	$CanvasLayer/Panel/Button.position = Vector2(200, 300)
+	
+	$CanvasLayer/Panel/Button.position = Vector2(425, 300)
 	$CanvasLayer/Panel/Button.size = Vector2(100, 50)
 	$CanvasLayer/Panel/Button.modulate = Color(255,255,255, 0.75)
+	$CanvasLayer/Panel/Button.text = "Send Forward"
 
 func _on_h_slider_drag_ended(_value_changed: bool) -> void:
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: " + str($CanvasLayer/Panel/HSlider.value)
@@ -199,114 +198,6 @@ func _on_button_pressed() -> void:
 	add_Peps(pepsjoin)
 	add_Food(foodadded)
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 func random_event() -> void:
 	var eventChanceCalculator = randi()%50
 	if eventChanceCalculator == 0:
@@ -335,5 +226,5 @@ func random_event() -> void:
 		)
 		pass
 	pass
-func on_button_pressed(Scenario, option) -> void:
+func on_button_pressed(_Scenario, _option) -> void:
 	pass

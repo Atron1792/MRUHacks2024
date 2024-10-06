@@ -14,7 +14,7 @@ func _ready():
 	anim3.play("rail_animation", 3)
 	anim4.play("rail_animation", 3)
 	anim5.play("rail_animation", 3)
-func _process(delta):
+func _process(_delta):
 	if ($"../MiniMap/Sprite2D/Path2D/PathFollow2D".is_slowing_down || $"../MiniMap/Sprite2D/Path2D/PathFollow2D".is_stopped) and velocity >0:
 		velocity = velocity - 0.01
 	if ($"../MiniMap/Sprite2D/Path2D/PathFollow2D".is_speeding_up || $"../MiniMap/Sprite2D/Path2D/PathFollow2D".speed == 0.01) and velocity < 3:
