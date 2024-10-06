@@ -38,12 +38,24 @@ func _process(_delta):
 
 
 func depletion_resource():
-	OilInit -= 5
-	FoodInit -= round(PeopleInit*0.5)
+	if $"../Sprite2D/Path2D/PathFollow2D".speed > 0:
+		OilInit -= 5
+	elif $"../Sprite2D/Path2D/PathFollow2D".speed <= 0:
+		OilInit -= 2
+	if FoodInit > 0:
+		FoodInit -= round(PeopleInit*0.5)
+	else:
+		FoodInit = 0
 	if FoodInit > (PeopleInit*1.25):
 		PeopleInit += 1
 	elif FoodInit < (PeopleInit*0.99):
-		PeopleInit -= round(randf_range(0, .5)*PeopleInit)
+		if PeopleInit > 0:
+			if PeopleInit >= 5:
+				PeopleInit -= round(randf_range(0, .5)*PeopleInit)
+			else:
+				PeopleInit -= 1 
+		else:
+			PeopleInit = 0
 
 func resource_texts():
 	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
@@ -71,5 +83,5 @@ func _on_timer_timeout() -> void:
 	depletion_resource()
 	
 func game_end():
-	if PeopleInit <= 0:
-		pass
+	if PeopleInit <= 0 or OilInit <= 0:
+		$"../Sprite2D/Path2D/PathFollow2D".speed = 0
