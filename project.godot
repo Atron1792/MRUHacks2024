@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 PF2D="*res://MapTravaler/path_follow_2d.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="MRUHacks2024"
