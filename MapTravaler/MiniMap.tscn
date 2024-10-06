@@ -87,7 +87,6 @@ position = Vector2(8, 12)
 texture = SubResource("AtlasTexture_gtyan")
 
 [node name="Food Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -99,6 +98,7 @@ texture = SubResource("AtlasTexture_g2j1r")
 [node name="Population Text" type="RichTextLabel" parent="Control/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.993239, 1)
 autowrap_mode = 0
 
 [node name="Population" type="Sprite2D" parent="Control/CanvasLayer/Population Text"]
