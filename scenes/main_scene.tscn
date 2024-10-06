@@ -56,10 +56,11 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_ujh3m"]
 script/source = "extends AnimatedSprite2D
 
-@onready var _animation_player = $AnimationPlayer
-
+@onready var anim = $AnimatieSprite2D
+func _ready():
+	anim.play(\"default\")
 func _process(delta):
-	_animation_player.play(\"default\")
+	pass
 "
 
 [sub_resource type="GDScript" id="GDScript_t60ef"]
@@ -133,9 +134,6 @@ position = Vector2(740, 533)
 scale = Vector2(5, 10.355)
 sprite_frames = SubResource("SpriteFrames_cki2h")
 script = SubResource("GDScript_ujh3m")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="shmovingRail/AnimatedSprite2D2"]
-root_node = NodePath("../..")
 
 [node name="shmovingTrain" type="Node2D" parent="."]
 position = Vector2(96, 538)
