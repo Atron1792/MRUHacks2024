@@ -1,0 +1,155 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxttsy47vihaf"]
+
+[ext_resource type="PackedScene" uid="uid://dfq5e7nx5svht" path="res://MapTravaler/MiniMap.tscn" id="1_h0rp2"]
+[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="3_8tqnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bunwu"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(0, 1, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqpwd"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(16, 1, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gggr2"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(32, 1, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gitrp"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(48, 1, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6nii"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(64, 1, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8v1l"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(80, 1, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cki2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bunwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqpwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gggr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gitrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6nii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8v1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_ujh3m"]
+script/source = "extends AnimatedSprite2D
+
+@onready var _animation_player = $AnimationPlayer
+
+func _process(delta):
+	_animation_player.play(\"default\")
+"
+
+[sub_resource type="GDScript" id="GDScript_t60ef"]
+script/source = "extends Node2D
+
+var formulax= 0
+var sinFunnyFunctionVelocity = 0.03
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if ($\"../MiniMap/Sprite2D/Path2D/PathFollow2D\".is_slowing_down || $\"../MiniMap/Sprite2D/Path2D/PathFollow2D\".is_stopped) and sinFunnyFunctionVelocity >0:
+		sinFunnyFunctionVelocity = sinFunnyFunctionVelocity - 0.0001
+	if ($\"../MiniMap/Sprite2D/Path2D/PathFollow2D\".is_speeding_up || $\"../MiniMap/Sprite2D/Path2D/PathFollow2D\".speed == 0.01) and sinFunnyFunctionVelocity < 0.03:
+		sinFunnyFunctionVelocity = sinFunnyFunctionVelocity + 0.0001
+	formulax = formulax +sinFunnyFunctionVelocity
+	
+	if(formulax < 4):
+		position.y = (-2)*(pow(formulax -2, 2)) + 8 + 530
+	elif(formulax >= 4):
+		position.y = (2)* pow(formulax - 6, 2)-8 + 530
+	if(formulax >= 8):
+		formulax = 0
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0wmm"]
+atlas = ExtResource("3_8tqnw")
+region = Rect2(0, 16, 96, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mr3jx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0wmm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwmts"]
+size = Vector2(673.5, 163)
+
+[node name="UserPov" type="Node2D"]
+
+[node name="MiniMap" parent="." instance=ExtResource("1_h0rp2")]
+position = Vector2(2, 0)
+scale = Vector2(0.5, 0.6)
+
+[node name="shmovingRail" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(661, 532)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(818, 532)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="shmovingRail"]
+texture_filter = 1
+position = Vector2(740, 533)
+scale = Vector2(5, 10.355)
+sprite_frames = SubResource("SpriteFrames_cki2h")
+script = SubResource("GDScript_ujh3m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="shmovingRail/AnimatedSprite2D2"]
+root_node = NodePath("../..")
+
+[node name="shmovingTrain" type="Node2D" parent="."]
+position = Vector2(0, 530)
+script = SubResource("GDScript_t60ef")
+
+[node name="Area2D" type="Area2D" parent="shmovingTrain"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="shmovingTrain/Area2D"]
+texture_filter = 1
+position = Vector2(336, 0)
+scale = Vector2(7, 10.298)
+sprite_frames = SubResource("SpriteFrames_mr3jx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shmovingTrain/Area2D"]
+position = Vector2(336.25, 0)
+shape = SubResource("RectangleShape2D_xwmts")
+
+[node name="Timer" type="Timer" parent="shmovingTrain"]

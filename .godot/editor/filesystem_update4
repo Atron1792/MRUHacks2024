@@ -1,11 +1,5 @@
 res://MapTravaler/MiniMap.tscn
 res://UI/UI Scripts/gathering.gd
 res://UI/UI Scripts/oil_init.gd
-<<<<<<< HEAD
-res://scenes/main_scene.tscn
-res://scenes/main_menu.tscn
-res://node_2d.tscn
-res://MapTravaler/MiniMap2.tscn
-=======
 res://UserPOV.tscn
->>>>>>> Fix
+res://UI/UI Scripts/initresorce.gd

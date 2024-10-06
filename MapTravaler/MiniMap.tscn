@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgmrf1bpq4bf1"]
+[gd_scene load_steps=11 format=3 uid="uid://dfq5e7nx5svht"]
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 [ext_resource type="Script" path="res://UI/UI Scripts/gathering.gd" id="5_6ymbr"]
-[ext_resource type="PackedScene" uid="uid://ymg3j058leih" path="res://UI/overlay.tscn" id="5_enad1"]
+[ext_resource type="PackedScene" path="res://UI/overlay.tscn" id="5_enad1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
 atlas = ExtResource("1_08ckp")
@@ -27,6 +27,8 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, 4.12142, 12.9178, 0, 0, 0, 0, -0.0887671, 12.1162, 0, 0, 0, 0, -2.59966, 11.3974, 0, 0, 0, 0, -5.71927, 10.5957, 0, 0, 0, 0, -8.25553, 10.0428, 0, 0, 0, 0, -11.6541, 10.8998, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.136, 5.0392, 0, 0, 0, 0, -9.29539, 5.23271, 0, 0, 0, 0, -7.1903, 7.05724, 0, 0, 0, 0, -5.71927, 8.57768, 0, 0, 0, 0, -4.57795, 7.08488, 0, 0, 0, 0, -2.72648, 6.33848, 0, 0, 0, 0, -0.240943, 5.14978, 0, 0, 0, 0, 1.63589, 4.92862, 0, 0, 0, 0, 3.10692, 6.47671, 0, 0, 0, 0, 5.9729, 6.86373, 0, 0, 0, 0, 9.21931, 8.24594, 0, 0, 0, 0, 10.7411, 10.3193, 0, 0, 0, 0, 12.4911, 11.5356, 0, 0, 0, 0, 10.5128, 11.508, 0, 0, 0, 0, 9.9041, 12.8902, 0, 0, 0, 0, 8.33162, 12.8625, 0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, -4.04533, 4.40338, 0, 0, 0, 0, 6.3787, 14.4383)
 }
 point_count = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eivie"]
 
 [node name="MiniMap" type="Node2D"]
 
@@ -141,9 +143,30 @@ layout_mode = 2
 
 [node name="FractionOil" type="RichTextLabel" parent="Control/CanvasLayer/Container"]
 layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+autowrap_mode = 0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/CanvasLayer/Container"]
 layout_mode = 2
+
+[node name="Container" type="Container" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_6ymbr")
+
+[node name="Panel" type="Panel" parent="Control/Container"]
+layout_mode = 2
+
+[node name="upg1" type="RichTextLabel" parent="Control/Container/Panel"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_eivie")
 
 [node name="Overlay" parent="." instance=ExtResource("5_enad1")]
 
