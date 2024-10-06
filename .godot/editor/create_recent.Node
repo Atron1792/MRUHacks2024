@@ -1,14 +1,13 @@
+Sprite2D
 TextureRect
 HBoxContainer
 HSlider
 RichTextLabel
 VSlider
 Container
-Sprite2D
 Control
 Container
 Label
 Node
-Sprite2D
 RichTextLabel
 AnimationPlayer

@@ -22,7 +22,7 @@ var danger = 0;
 
 #Ready Initilization
 func _ready():
-	get_node("CanvasLayer/Oil Text").size.x = 100
+	get_node("CanvasLayer/Oil Text").size.x = 200
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 150
 	get_node("CanvasLayer/Wood Text").size.x = 100
@@ -30,11 +30,11 @@ func _ready():
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
 	
 	#Text positioning (x,y)
-	$"CanvasLayer/Oil Text".position = Vector2(100,0)
-	$"CanvasLayer/Food Text".position = Vector2(200,0)
-	$"CanvasLayer/Population Text".position = Vector2(320,0)
-	$"CanvasLayer/Wood Text".position = Vector2(500,0)
-	$"CanvasLayer/Steel Text".position = Vector2(600,0)
+	$"CanvasLayer/Oil Text".position = Vector2(72,32)
+	$"CanvasLayer/Food Text".position = Vector2(352,32)
+	$"CanvasLayer/Population Text".position = Vector2(656,32)
+	$"CanvasLayer/Wood Text".position = Vector2(904,18)
+	$"CanvasLayer/Steel Text".position = Vector2(904,48)
 
 	
 	#rationing init
