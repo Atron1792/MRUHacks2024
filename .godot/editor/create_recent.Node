@@ -1,8 +1,11 @@
+Button
+Panel
+ItemList
+CanvasLayer
 AnimatedSprite2D
 Node2D
 RichTextLabel
 Timer
-CanvasLayer
 Control
 PathFollow2D
 Path2D
@@ -10,4 +13,3 @@ TileMapLayer
 Sprite2D
 TileMap
 CollisionShape2D
-Area2D
