@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 @export var speed = 0.01
-var is_speeding_up = false
+@export var is_speeding_up = false
 @export var is_slowing_down = false
 @export var is_stopped = false
 # Called when the node enters the scene tree for the first time.
