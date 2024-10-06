@@ -11,7 +11,7 @@ extends Node
 @export var FoodInit = resce.FoodInit
 @export var PeopleInit = resce.PeopleInit
 @export var WoodInit = resce.WoodInit
-@export var StoneInit = resce.StoneInit
+@export var SteelInit = resce.SteelInit
 var danger = 0;
 
 #GUI Resources background area element
@@ -23,13 +23,13 @@ func _ready():
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 130
 	get_node("CanvasLayer/Wood Text").size.x = 100
-	get_node("CanvasLayer/Stone Text").size.x = 100
+	get_node("CanvasLayer/Steel Text").size.x = 100
 	#Text positioning (x,y)
 	$"CanvasLayer/Oil Text".position = Vector2(100,0)
 	$"CanvasLayer/Food Text".position = Vector2(200,0)
 	$"CanvasLayer/Population Text".position = Vector2(300,0)
 	$"CanvasLayer/Wood Text".position = Vector2(500,0)
-	$"CanvasLayer/Stone Text".position = Vector2(600,0)
+	$"CanvasLayer/Steel Text".position = Vector2(600,0)
 	
 	print(OilInit)
 func _process(_delta):
@@ -59,11 +59,20 @@ func depletion_resource():
 				PeopleInit = 0
 
 func resource_texts():
-	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
-	$"CanvasLayer/Food Text".text = "Food: " + str(FoodInit)
-	$"CanvasLayer/Population Text".text = "Population: " + str(PeopleInit)
-	$"CanvasLayer/Wood Text".text = "Wood: " + str(WoodInit)
-	$"CanvasLayer/Stone Text".text = "Steel: " + str(StoneInit)
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Oil Text/Oil/texture")
+	$"CanvasLayer/Oil Text".text = "     Oil: " + str(OilInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Food Text/Food/texture")
+	$"CanvasLayer/Food Text".text = "     Food: " + str(FoodInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Population Text/Population/texture")
+	$"CanvasLayer/Population Text".text = "     Population: " + str(PeopleInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Wood Text/Wood/texture")
+	$"CanvasLayer/Wood Text".text = "     Wood: " + str(WoodInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
+	$"CanvasLayer/Steel Text".text = "     Steel: " + str(SteelInit)
 
 func add_Oil(Oil):
 	OilInit += Oil
@@ -78,7 +87,7 @@ func add_Wood(Wood):
 	WoodInit += Wood
 
 func add_Steel(steel):
-	StoneInit += steel
+	SteelInit += steel
 
 func _on_timer_timeout() -> void:
 	depletion_resource()

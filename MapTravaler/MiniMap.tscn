@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfq5e7nx5svht"]
+[gd_scene load_steps=13 format=3 uid="uid://dfq5e7nx5svht"]
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
@@ -25,6 +25,26 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, 4.12142, 12.9178, 0, 0, 0, 0, -0.0887671, 12.1162, 0, 0, 0, 0, -2.59966, 11.3974, 0, 0, 0, 0, -5.71927, 10.5957, 0, 0, 0, 0, -8.25553, 10.0428, 0, 0, 0, 0, -11.6541, 10.8998, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.694, 7.49955, 0, 0, 0, 0, -12.136, 5.0392, 0, 0, 0, 0, -9.29539, 5.23271, 0, 0, 0, 0, -7.1903, 7.05724, 0, 0, 0, 0, -5.71927, 8.57768, 0, 0, 0, 0, -4.57795, 7.08488, 0, 0, 0, 0, -2.72648, 6.33848, 0, 0, 0, 0, -0.240943, 5.14978, 0, 0, 0, 0, 1.63589, 4.92862, 0, 0, 0, 0, 3.10692, 6.47671, 0, 0, 0, 0, 5.9729, 6.86373, 0, 0, 0, 0, 9.21931, 8.24594, 0, 0, 0, 0, 10.7411, 10.3193, 0, 0, 0, 0, 12.4911, 11.5356, 0, 0, 0, 0, 10.5128, 11.508, 0, 0, 0, 0, 9.9041, 12.8902, 0, 0, 0, 0, 8.33162, 12.8625, 0, 0, 0, 0, 6.3787, 14.4383, 0, 0, 0, 0, -4.04533, 4.40338, 0, 0, 0, 0, 6.3787, 14.4383)
 }
 point_count = 28
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtyan"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2j1r"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udgcb"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxmcc"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlkth"]
+atlas = ExtResource("1_08ckp")
+region = Rect2(80, 96, 16, 16)
 
 [node name="MiniMap" type="Node2D"]
 
@@ -61,21 +81,48 @@ script = ExtResource("4_pimux")
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Oil" type="Sprite2D" parent="Control/CanvasLayer/Oil Text"]
+texture_filter = 1
+position = Vector2(8, 12)
+texture = SubResource("AtlasTexture_gtyan")
+
 [node name="Food Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Food" type="Sprite2D" parent="Control/CanvasLayer/Food Text"]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_g2j1r")
 
 [node name="Population Text" type="RichTextLabel" parent="Control/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+autowrap_mode = 0
+
+[node name="Population" type="Sprite2D" parent="Control/CanvasLayer/Population Text"]
+texture_filter = 1
+position = Vector2(8, 12)
+texture = SubResource("AtlasTexture_udgcb")
 
 [node name="Wood Text" type="RichTextLabel" parent="Control/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Stone Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+[node name="Wood" type="Sprite2D" parent="Control/CanvasLayer/Wood Text"]
+texture_filter = 1
+position = Vector2(8, 12)
+texture = SubResource("AtlasTexture_qxmcc")
+
+[node name="Steel Text" type="RichTextLabel" parent="Control/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Steel" type="Sprite2D" parent="Control/CanvasLayer/Steel Text"]
+texture_filter = 1
+position = Vector2(8, 12)
+texture = SubResource("AtlasTexture_qlkth")
 
 [node name="Game OVer" type="RichTextLabel" parent="Control/CanvasLayer"]
 visible = false
@@ -88,6 +135,8 @@ wait_time = 5.0
 autostart = true
 
 [node name="Panel" type="Panel" parent="Control/CanvasLayer"]
+visible = false
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 

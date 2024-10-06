@@ -1,11 +1,6 @@
 res://MapTravaler/MiniMap.tscn
-res://UI/UI Scripts/oil_init.gd
-res://MapTravaler/path_follow_2d.gd
-res://UI/UI Scripts/shops.gd
-res://trainmovement.gd
-res://UserPOV.tscn
 res://UI/UI Scripts/gathering.gd
-res://user_pov.gd
+res://UI/UI Scripts/oil_init.gd
+res://UserPOV.tscn
 res://MapTravaler/TrainIcon.tscn
-res://animated_sprite_2d_2.gd
-res://animatedRail.tscn
+res://UI/UI Scripts/initresorce.gd
