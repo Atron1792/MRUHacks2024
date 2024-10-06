@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PathFollow2d="*res://MapTravaler/path_follow_2d.gd"
+resources="*res://UI/UI Scripts/oil_init.gd"
 
 [dotnet]
 
