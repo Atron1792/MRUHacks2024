@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 [gd_scene load_steps=9 format=3 uid="uid://dfq5e7nx5svht"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://dfq5e7nx5svht"]
+>>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 [ext_resource type="Script" path="res://UI/UI Scripts/gathering.gd" id="5_6ymbr"]
+=======
+[ext_resource type="PackedScene" uid="uid://cgf7wpftr8yfg" path="res://UI/overlay.tscn" id="5_enad1"]
+>>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
 atlas = ExtResource("1_08ckp")
@@ -31,8 +39,8 @@ point_count = 28
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(578.5, 324.5)
-scale = Vector2(17.9219, 10.6393)
+position = Vector2(608, 376)
+scale = Vector2(15, 8.905)
 sprite_frames = SubResource("SpriteFrames_h33yb")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
@@ -48,6 +56,7 @@ script = ExtResource("2_2cbrk")
 [node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
 scale = Vector2(0.02, 0.02)
 
+<<<<<<< HEAD
 [node name="Control" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
@@ -149,3 +158,6 @@ layout_mode = 2
 [connection signal="pressed" from="Control/CanvasLayer/Panel/Button" to="Control" method="_on_button_pressed"]
 [connection signal="drag_ended" from="Control/CanvasLayer/Container/HSlider3" to="Control" method="_on_h_slider_3_drag_ended"]
 [connection signal="drag_ended" from="Control/CanvasLayer/Container/HSlider2" to="Control" method="_on_h_slider_2_drag_ended"]
+=======
+[node name="Overlay" parent="." instance=ExtResource("5_enad1")]
+>>>>>>> 87e64406661c4991c47b4402d32c26f252275390

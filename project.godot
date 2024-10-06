@@ -14,6 +14,7 @@ config/name="MRUHacks2024"
 run/main_scene="res://MapTravaler/MiniMap.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+run/canvas_textures/default_texture_filter=1
 
 [autoload]
 

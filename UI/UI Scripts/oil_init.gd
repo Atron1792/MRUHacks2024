@@ -22,6 +22,7 @@ var danger = 0;
 
 #Ready Initilization
 func _ready():
+<<<<<<< HEAD
 	get_node("CanvasLayer/Oil Text").size.x = 100
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 150
@@ -34,6 +35,20 @@ func _ready():
 	$"CanvasLayer/Population Text".position = Vector2(320,0)
 	$"CanvasLayer/Wood Text".position = Vector2(500,0)
 	$"CanvasLayer/Stone Text".position = Vector2(600,0)
+=======
+	
+	get_node("CanvasLayer/HBoxContainer/Oil Text").size.x = 100
+	get_node("CanvasLayer/HBoxContainer/Food Text").size.x = 100
+	get_node("CanvasLayer/HBoxContainer/Population Text").size.x = 150
+	get_node("CanvasLayer/HBoxContainer/Wood Text").size.x = 100
+	get_node("CanvasLayer/HBoxContainer/Steel Text").size.x = 100
+	#Text positioning (x,y)
+	$"CanvasLayer/HBoxContainer/Oil Text".position = Vector2(100,0)
+	$"CanvasLayer/HBoxContainer/Food Text".position = Vector2(200,0)
+	$"CanvasLayer/HBoxContainer/Population Text".position = Vector2(320,0)
+	$"CanvasLayer/HBoxContainer/Wood Text".position = Vector2(500,0)
+	$"CanvasLayer/HBoxContainer/Steel Text".position = Vector2(600,0)
+>>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 	
 	#rationing init
 	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
@@ -100,20 +115,25 @@ func depletion_resource():
 				PeopleInit = round(randf_range(0, .1)*PeopleInit)
 
 func resource_texts():
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Oil Text/Oil/texture")
-	$"CanvasLayer/Oil Text".text = "     Oil: " + str(OilInit)
+	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Oil Text/Oil/texture")
+	$"CanvasLayer/HBoxContainer/Oil Text".text = "     Oil: " + str(OilInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Food Text/Food/texture")
-	$"CanvasLayer/Food Text".text = "     Food: " + str(FoodInit)
+	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Food Text/Food/texture")
+	$"CanvasLayer/HBoxContainer/Food Text".text = "     Food: " + str(FoodInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Population Text/Population/texture")
-	$"CanvasLayer/Population Text".text = "     Population: " + str(PeopleInit)
+	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Population Text/Population/texture")
+	$"CanvasLayer/HBoxContainer/Population Text".text = "     Population: " + str(PeopleInit)
 	
-	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Wood Text/Wood/texture")
-	$"CanvasLayer/Wood Text".text = "     Wood: " + str(WoodInit)
+	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Wood Text/Wood/texture")
+	$"CanvasLayer/HBoxContainer/Wood Text".text = "     Wood: " + str(WoodInit)
 	
+<<<<<<< HEAD
 	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
 	$"CanvasLayer/Stone Text".text = "     Steel: " + str(SteelInit)
+=======
+	$"CanvasLayer/HBoxContainer/Oil Text".add_image($"CanvasLayer/HboxContainer/Steel Text/Steel/texture")
+	$"CanvasLayer/HBoxContainer/Steel Text".text = "     Steel: " + str(SteelInit)
+>>>>>>> 87e64406661c4991c47b4402d32c26f252275390
 
 func add_Oil(Oil):
 	OilInit += Oil
@@ -172,7 +192,7 @@ func stop_manager():
 	$CanvasLayer/Panel/Button.size = Vector2(100, 50)
 	$CanvasLayer/Panel/Button.modulate = Color(255,255,255, 0.75)
 
-func _on_h_slider_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_drag_ended(_value_changed: bool) -> void:
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: " + str($CanvasLayer/Panel/HSlider.value)
 
 func _on_button_pressed() -> void:
