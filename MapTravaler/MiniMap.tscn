@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfq5e7nx5svht"]
+[gd_scene load_steps=11 format=3 uid="uid://dgmrf1bpq4bf1"]
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
 [ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
 [ext_resource type="Script" path="res://UI/UI Scripts/gathering.gd" id="5_6ymbr"]
-[ext_resource type="PackedScene" path="res://UI/overlay.tscn" id="5_enad1"]
+[ext_resource type="PackedScene" uid="uid://ymg3j058leih" path="res://UI/overlay.tscn" id="5_enad1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
 atlas = ExtResource("1_08ckp")

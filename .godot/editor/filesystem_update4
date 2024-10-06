@@ -1,5 +1,10 @@
 res://MapTravaler/MiniMap.tscn
 res://UI/UI Scripts/gathering.gd
 res://UI/UI Scripts/oil_init.gd
-res://UserPOV.tscn
-res://UI/UI Scripts/initresorce.gd
+res://UI/overlay.tscn
+res://scenes/main_scene.tscn
+res://node_2d.tscn
+res://scenes/guide_menu.tscn
+res://scenes/main_menu.tscn
+res://MapTravaler/path_follow_2d.gd
+res://scenes/shmoving_rail.gd
