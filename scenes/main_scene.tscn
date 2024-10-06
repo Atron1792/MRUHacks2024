@@ -1,30 +1,30 @@
 [gd_scene load_steps=15 format=3 uid="uid://bbrwqwac5ie6b"]
 
-[ext_resource type="PackedScene" uid="uid://dfq5e7nx5svht" path="res://MapTravaler/MiniMap.tscn" id="1_h0rp2"]
-[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="3_8tqnw"]
+[ext_resource type="PackedScene" uid="uid://dfq5e7nx5svht" path="res://MapTravaler/MiniMap.tscn" id="1_l5mra"]
+[ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="2_8hqnt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bunwu"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(0, 1, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqpwd"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(16, 1, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gggr2"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(32, 1, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gitrp"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(48, 1, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nii"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(64, 1, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8v1l"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(80, 1, 16, 14)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cki2h"]
@@ -89,7 +89,7 @@ func _process(delta):
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0wmm"]
-atlas = ExtResource("3_8tqnw")
+atlas = ExtResource("2_8hqnt")
 region = Rect2(0, 16, 96, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mr3jx"]
@@ -106,13 +106,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwmts"]
 size = Vector2(673.5, 163)
 
-[node name="UserPov" type="Node2D"]
+[node name="Main Scene" type="Node2D"]
 
-[node name="MiniMap" parent="." instance=ExtResource("1_h0rp2")]
-position = Vector2(2, 0)
-scale = Vector2(0.5, 0.6)
+[node name="MiniMap" parent="." instance=ExtResource("1_l5mra")]
+position = Vector2(48, 48)
+scale = Vector2(0.45, 0.55)
 
 [node name="shmovingRail" type="Node2D" parent="."]
+position = Vector2(96, 8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="shmovingRail"]
 texture_filter = 1
@@ -137,7 +138,7 @@ script = SubResource("GDScript_ujh3m")
 root_node = NodePath("../..")
 
 [node name="shmovingTrain" type="Node2D" parent="."]
-position = Vector2(0, 530)
+position = Vector2(96, 538)
 script = SubResource("GDScript_t60ef")
 
 [node name="Area2D" type="Area2D" parent="shmovingTrain"]

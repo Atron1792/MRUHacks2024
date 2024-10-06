@@ -1,8 +1,8 @@
+TextureRect
 HBoxContainer
 Control
 Container
 Label
-TextureRect
 Node
 Sprite2D
 RichTextLabel
@@ -12,4 +12,3 @@ Node2D
 Timer
 Panel
 CanvasLayer
-Button

@@ -72,6 +72,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="northern" type="TextureRect" parent="arrows"]
+layout_mode = 0
 offset_left = 456.0
 offset_top = 288.0
 offset_right = 520.0
@@ -94,6 +95,7 @@ of oil."
 label_settings = SubResource("LabelSettings_s41g3")
 
 [node name="eastern" type="TextureRect" parent="arrows"]
+layout_mode = 0
 offset_left = 568.0
 offset_top = 456.0
 offset_right = 632.0
@@ -116,6 +118,7 @@ more food."
 label_settings = SubResource("LabelSettings_s41g3")
 
 [node name="western" type="TextureRect" parent="arrows"]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 440.0
 offset_right = 200.0
@@ -138,6 +141,7 @@ more wood."
 label_settings = SubResource("LabelSettings_s41g3")
 
 [node name="southern" type="TextureRect" parent="arrows"]
+layout_mode = 0
 offset_left = 472.0
 offset_top = 560.0
 offset_right = 536.0
