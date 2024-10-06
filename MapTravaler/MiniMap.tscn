@@ -75,7 +75,7 @@ offset_bottom = 40.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Stone Text" type="RichTextLabel" parent="Control/CanvasLayer"]
+[node name="Steel Text" type="RichTextLabel" parent="Control/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
