@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfq5e7nx5svht"]
+[gd_scene load_steps=8 format=3 uid="uid://dfq5e7nx5svht"]
 
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="1_08ckp"]
 [ext_resource type="Script" path="res://MapTravaler/path_follow_2d.gd" id="2_2cbrk"]
 [ext_resource type="PackedScene" uid="uid://b5fpidkfeyhv8" path="res://MapTravaler/TrainIcon.tscn" id="2_hyd8h"]
-[ext_resource type="Script" path="res://UI/UI Scripts/oil_init.gd" id="4_pimux"]
+[ext_resource type="PackedScene" uid="uid://cgf7wpftr8yfg" path="res://UI/overlay.tscn" id="5_enad1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn88n"]
 atlas = ExtResource("1_08ckp")
@@ -26,32 +26,12 @@ _data = {
 }
 point_count = 28
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtyan"]
-atlas = ExtResource("1_08ckp")
-region = Rect2(64, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2j1r"]
-atlas = ExtResource("1_08ckp")
-region = Rect2(80, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_udgcb"]
-atlas = ExtResource("1_08ckp")
-region = Rect2(64, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxmcc"]
-atlas = ExtResource("1_08ckp")
-region = Rect2(64, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlkth"]
-atlas = ExtResource("1_08ckp")
-region = Rect2(80, 96, 16, 16)
-
 [node name="MiniMap" type="Node2D"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(578.5, 324.5)
-scale = Vector2(17.9219, 10.6393)
+position = Vector2(608, 376)
+scale = Vector2(15, 8.905)
 sprite_frames = SubResource("SpriteFrames_h33yb")
 
 [node name="Path2D" type="Path2D" parent="Sprite2D"]
@@ -67,114 +47,4 @@ script = ExtResource("2_2cbrk")
 [node name="TrainIcon" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("2_hyd8h")]
 scale = Vector2(0.02, 0.02)
 
-[node name="Control" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_pimux")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-
-[node name="Oil Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Oil" type="Sprite2D" parent="Control/CanvasLayer/Oil Text"]
-texture_filter = 1
-position = Vector2(8, 12)
-texture = SubResource("AtlasTexture_gtyan")
-
-[node name="Food Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Food" type="Sprite2D" parent="Control/CanvasLayer/Food Text"]
-texture_filter = 1
-position = Vector2(8, 8)
-texture = SubResource("AtlasTexture_g2j1r")
-
-[node name="Population Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.993239, 1)
-autowrap_mode = 0
-
-[node name="Population" type="Sprite2D" parent="Control/CanvasLayer/Population Text"]
-texture_filter = 1
-position = Vector2(8, 12)
-texture = SubResource("AtlasTexture_udgcb")
-
-[node name="Wood Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Wood" type="Sprite2D" parent="Control/CanvasLayer/Wood Text"]
-texture_filter = 1
-position = Vector2(8, 12)
-texture = SubResource("AtlasTexture_qxmcc")
-
-[node name="Steel Text" type="RichTextLabel" parent="Control/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Steel" type="Sprite2D" parent="Control/CanvasLayer/Steel Text"]
-texture_filter = 1
-position = Vector2(8, 12)
-texture = SubResource("AtlasTexture_qlkth")
-
-[node name="Game OVer" type="RichTextLabel" parent="Control/CanvasLayer"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-text = "Game Over"
-
-[node name="Timer" type="Timer" parent="Control/CanvasLayer"]
-wait_time = 5.0
-autostart = true
-
-[node name="Panel" type="Panel" parent="Control/CanvasLayer"]
-visible = false
-texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Stop_text" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-texture_filter = 2
-layout_mode = 0
-offset_right = 1000.0
-offset_bottom = 100.0
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/bold_italics_font_size = 50
-theme_override_font_sizes/italics_font_size = 50
-theme_override_font_sizes/mono_font_size = 50
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 50
-fit_content = true
-scroll_active = false
-
-[node name="Info_text" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HSlider" type="HSlider" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 16.0
-
-[node name="Button" type="Button" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
-[connection signal="drag_ended" from="Control/CanvasLayer/Panel/HSlider" to="Control" method="_on_h_slider_drag_ended"]
-[connection signal="pressed" from="Control/CanvasLayer/Panel/Button" to="Control" method="_on_button_pressed"]
+[node name="Overlay" parent="." instance=ExtResource("5_enad1")]

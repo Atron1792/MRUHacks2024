@@ -4,3 +4,12 @@ res://UI/UI Scripts/oil_init.gd
 res://UserPOV.tscn
 res://MapTravaler/TrainIcon.tscn
 res://UI/UI Scripts/initresorce.gd
+res://scenes/main_menu.gd
+res://scenes/Main Menu.tscn
+res://scenes/Settings Menu.tscn
+res://scenes/settings_menu.gd
+res://scenes/Main Menu2.tscn
+res://UI/overlay.tscn
+res://scenes/guide_menu.tscn
+res://scenes/main_menu.tscn
+res://scenes/guide_menu.gd
