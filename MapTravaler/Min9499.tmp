@@ -110,19 +110,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="HSlider" type="HSlider" parent="Control/CanvasLayer/Panel"]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 16.0
 
-[node name="Button" type="Button" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
-[connection signal="drag_ended" from="Control/CanvasLayer/Panel/HSlider" to="Control" method="_on_h_slider_drag_ended"]

@@ -4,15 +4,15 @@ extends Node
 #Author: Phospor-cell
 #Date: 2024-10-05 @ 11:11 AM
 #Corrupt: 6
+#hours spent fixing github: Pending + 6hours
 #______________________________
-
 #Init variables do not change
 @export var OilInit = resce.OilInit
 @export var FoodInit = resce.FoodInit
 @export var PeopleInit = resce.PeopleInit
 @export var WoodInit = resce.WoodInit
 @export var StoneInit = resce.StoneInit
-
+var danger = 0;
 
 #GUI Resources background area element
 
@@ -36,7 +36,6 @@ func _process(_delta):
 	stop_train()
 	resource_texts()
 	game_end()
-
 
 func depletion_resource():
 	if $"../Sprite2D/Path2D/PathFollow2D".speed > 0:
@@ -86,16 +85,38 @@ func _on_timer_timeout() -> void:
 func game_end():
 	if PeopleInit <= 0 or OilInit <= 0:
 		$"../Sprite2D/Path2D/PathFollow2D".speed = 0
-#hours spent fixing github: Pending + 6hours
-
+		
+#Stop management UI
 func stop_train():
 	$CanvasLayer/Panel.size.x = 600
 	$CanvasLayer/Panel.size.y = 400
 	$CanvasLayer/Panel.position = Vector2(300, 100)
 	$CanvasLayer/Panel.modulate = Color(0, 1, 1, 1)
+	$CanvasLayer/Panel.modulate.a = 1.60
 	if $"../Sprite2D/Path2D/PathFollow2D".speed == 0:
 		$CanvasLayer/Panel.visible = true
 	else: 
 		$CanvasLayer/Panel.visible = false
 #Achivement unlocked line 100
+	$CanvasLayer/Panel/Stop_text.text = "Gathering"
+	#$CanvasLayer/Panel/Stop_text.scale.x = 3
+	#$CanvasLayer/Panel/Stop_text.scale.y = 3
+	$CanvasLayer/Panel/Stop_text.size.x = 500
+	$CanvasLayer/Panel/Stop_text.position.x = 175
 	
+	$CanvasLayer/Panel/Info_text.text = "You Have Stopped Leave before the people freeze\n\n Area Danger Level: " + str(danger)
+	$CanvasLayer/Panel/Info_text.size = Vector2(400, 200)
+	$CanvasLayer/Panel/Info_text.position = Vector2(100, 100)
+	stop_manager()
+
+#Stop management for resources
+func stop_manager():
+	$CanvasLayer/Panel/HSlider.editable = true
+	$CanvasLayer/Panel/HSlider.size = Vector2(250, 100)
+	$CanvasLayer/Panel/HSlider.set_max(round((PeopleInit/10)+4))
+	$CanvasLayer/Panel/HSlider.position = Vector2(150,200)
+	$CanvasLayer/Panel/RichTextLabel.size.x = 250
+	$CanvasLayer/Panel/RichTextLabel.position = Vector2(150, 200)
+
+func _on_h_slider_drag_ended(value_changed: bool) -> void:
+	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: " + str($CanvasLayer/Panel/HSlider.value)

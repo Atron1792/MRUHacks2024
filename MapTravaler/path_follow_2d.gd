@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-@export var speed = 0.01
+var speed = 0.01
 var is_speeding_up = false
 var is_slowing_down = false
 var is_stopped = false

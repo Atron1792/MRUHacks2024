@@ -91,38 +91,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Stop_text" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-texture_filter = 2
 layout_mode = 0
-offset_right = 1000.0
-offset_bottom = 100.0
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 10
-theme_override_font_sizes/bold_italics_font_size = 50
-theme_override_font_sizes/italics_font_size = 50
-theme_override_font_sizes/mono_font_size = 50
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 50
+offset_right = 40.0
+offset_bottom = 40.0
 fit_content = true
 scroll_active = false
 
-[node name="Info_text" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/CanvasLayer/Panel"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HSlider" type="HSlider" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 16.0
-
-[node name="Button" type="Button" parent="Control/CanvasLayer/Panel"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]
-[connection signal="drag_ended" from="Control/CanvasLayer/Panel/HSlider" to="Control" method="_on_h_slider_drag_ended"]

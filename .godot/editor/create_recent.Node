@@ -1,7 +1,9 @@
+Button
+HSlider
+HScrollBar
 RichTextLabel
 Panel
 CanvasLayer
-Button
 ItemList
 AnimatedSprite2D
 Node2D
@@ -10,5 +12,3 @@ AnimatedSprite2D
 Area2D
 Timer
 Control
-PathFollow2D
-Path2D
