@@ -6,3 +6,6 @@ res://trainmovement.gd
 res://UserPOV.tscn
 res://UI/UI Scripts/gathering.gd
 res://user_pov.gd
+res://MapTravaler/TrainIcon.tscn
+res://animated_sprite_2d_2.gd
+res://animatedRail.tscn
