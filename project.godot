@@ -23,7 +23,10 @@ Gathering="*res://UI/UI Scripts/gathering.gd"
 
 [display]
 
+window/size/mode=2
+window/size/resizable=false
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
@@ -31,5 +34,6 @@ project/assembly_name="MRUHacks2024"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
