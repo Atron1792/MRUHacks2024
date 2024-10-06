@@ -12,18 +12,22 @@ extends Node
 @export var PeopleInit = resce.PeopleInit
 @export var WoodInit = resce.WoodInit
 @export var StoneInit = resce.StoneInit
+
+var fraction_oil = 1
+var fraction_food = 1
+
 var danger = 0;
 
 #GUI Resources background area element
 
 #Ready Initilization
 func _ready():
-	
 	get_node("CanvasLayer/Oil Text").size.x = 100
 	get_node("CanvasLayer/Food Text").size.x = 100
 	get_node("CanvasLayer/Population Text").size.x = 130
 	get_node("CanvasLayer/Wood Text").size.x = 100
 	get_node("CanvasLayer/Stone Text").size.x = 100
+	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
 	#Text positioning (x,y)
 	$"CanvasLayer/Oil Text".position = Vector2(100,0)
 	$"CanvasLayer/Food Text".position = Vector2(200,0)
@@ -31,32 +35,69 @@ func _ready():
 	$"CanvasLayer/Wood Text".position = Vector2(500,0)
 	$"CanvasLayer/Stone Text".position = Vector2(600,0)
 	
-	print(OilInit)
+	#rationing init
+	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
+	$CanvasLayer/Container/HSlider3.position = Vector2(10, 50)
+	$CanvasLayer/Container/HSlider3.set_max(4)
+	$CanvasLayer/Container/HSlider3.set_min(1)
+	$CanvasLayer/Container/HSlider3.set_value_no_signal(4)
+	
+	$CanvasLayer/Container/HSlider2.size = Vector2(50, 25)
+	$CanvasLayer/Container/HSlider2.position = Vector2(10, 100)
+	$CanvasLayer/Container/HSlider2.set_max(4)
+	$CanvasLayer/Container/HSlider2.set_min(1)
+	$CanvasLayer/Container/HSlider2.set_value_no_signal(4)
+	
+	$CanvasLayer/Container/FractionOil.text = str(1)
+	$CanvasLayer/Container/FractionOil.size = Vector2(50, 25)
+	$CanvasLayer/Container/FractionOil.position = Vector2(10, 30)
+	
+	
+	$CanvasLayer/Container/RichTextLabel2.text = str(1)
+	$CanvasLayer/Container/RichTextLabel2.size = Vector2(50, 25)
+	$CanvasLayer/Container/RichTextLabel2.position = Vector2(10, 80)
+
+
+func _on_h_slider_3_drag_ended(value_changed: bool) -> void:
+	fraction_oil = $CanvasLayer/Container/HSlider3.value/4
+	$CanvasLayer/Container/FractionOil.text = str(fraction_oil)
+
+
+
+func _on_h_slider_2_drag_ended(value_changed: bool) -> void:
+	fraction_food = $CanvasLayer/Container/HSlider2.value/4
+	$CanvasLayer/Container/RichTextLabel2.text = str(fraction_food)
+
 func _process(_delta):
 	stop_train()
 	resource_texts()
 	game_end()
+	if FoodInit < 0:
+		FoodInit = 0
 
 func depletion_resource():
 	if !($CanvasLayer/Panel.visible):
 		if $"../Sprite2D/Path2D/PathFollow2D".speed > 0:
-			OilInit -= 5
+			OilInit -= round(5*fraction_oil)+1
 		elif $"../Sprite2D/Path2D/PathFollow2D".speed <= 0:
-			OilInit -= 2
+			OilInit -= round(2*fraction_oil)+1
 		if FoodInit > 0:
-			FoodInit -= round(PeopleInit*0.5)
+			FoodInit -= round(PeopleInit*fraction_food)
 		else:
 			FoodInit = 0
-		if FoodInit > (PeopleInit*1.25):
+		if FoodInit > PeopleInit and (fraction_food > 0.50):
 			PeopleInit += 1
-		elif FoodInit < (PeopleInit*0.99):
+			
+		elif FoodInit < (PeopleInit*0.95) or fraction_food <= 0.5:
 			if PeopleInit > 0:
-				if PeopleInit >= 5:
+				if PeopleInit >= 5 and fraction_food < 0.75 and FoodInit < (PeopleInit*0.5):
 					PeopleInit -= round(randf_range(0, .5)*PeopleInit)
-				else:
+				elif fraction_food == 0.75 or PeopleInit < 5:
 					PeopleInit -= 1 
+				elif FoodInit < (PeopleInit*0.90) and PeopleInit > 5:
+					PeopleInit -= 3
 			else:
-				PeopleInit = 0
+				PeopleInit = round(randf_range(0, .1)*PeopleInit)
 
 func resource_texts():
 	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
@@ -131,7 +172,7 @@ func _on_h_slider_drag_ended(value_changed: bool) -> void:
 func _on_button_pressed() -> void:
 	$CanvasLayer/Panel.visible = false
 	var oiladded = round(randi_range(0,50)*($CanvasLayer/Panel/HSlider.value/10))
-	var foodadded = round(randi_range(0,50)*($CanvasLayer/Panel/HSlider.value/10)*($"../Sprite2D/Path2D/PathFollow2D".position.y/100)+absi(($"../Sprite2D/Path2D/PathFollow2D".position.x-500)/100))
+	var foodadded = round(randi_range(0,50)*($CanvasLayer/Panel/HSlider.value/10)*($"../Sprite2D/Path2D/PathFollow2D".position.y/100)+absi(($"../Sprite2D/Path2D/PathFollow2D".position.x-200)/100))
 	var pepsjoin = round(randi_range(0,20)*($CanvasLayer/Panel/HSlider.value/10)*($"../Sprite2D/Path2D/PathFollow2D".position.y/100)+(($"../Sprite2D/Path2D/PathFollow2D".position.x-200)/100)*randi_range(-1,1))
 	
 	if PeopleInit >= 9999:

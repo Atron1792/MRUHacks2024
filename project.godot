@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PF2D="*res://MapTravaler/path_follow_2d.gd"
 resce="*res://UI/UI Scripts/initresorce.gd"
+Gathering="*res://UI/UI Scripts/gathering.gd"
 
 [display]
 
