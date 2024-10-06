@@ -1,13 +1,13 @@
+Button
+RichTextLabel
+Panel
+Container
 TextureRect
 Sprite2D
 HBoxContainer
 HSlider
-RichTextLabel
 VSlider
-Container
 Control
-Container
 Label
 Node
-RichTextLabel
 AnimationPlayer

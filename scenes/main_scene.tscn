@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbrwqwac5ie6b"]
+[gd_scene load_steps=17 format=3 uid="uid://bbrwqwac5ie6b"]
 
 [ext_resource type="PackedScene" uid="uid://dgmrf1bpq4bf1" path="res://MapTravaler/MiniMap.tscn" id="1_l5mra"]
 [ext_resource type="Texture2D" uid="uid://dwdidxk1ip3r8" path="res://assests/mruhacks2024.png" id="2_8hqnt"]
@@ -28,6 +28,14 @@ region = Rect2(64, 1, 16, 14)
 atlas = ExtResource("2_8hqnt")
 region = Rect2(80, 1, 16, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5pv"]
+atlas = ExtResource("2_8hqnt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysu6w"]
+atlas = ExtResource("2_8hqnt")
+region = Rect2(48, 32, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cki2h"]
 animations = [{
 "frames": [{
@@ -48,6 +56,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b8v1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysu6w")
 }],
 "loop": true,
 "name": &"rail_animation",
