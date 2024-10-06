@@ -39,20 +39,20 @@ func _ready():
 	
 	#rationing init
 	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
-	$CanvasLayer/Container/HSlider3.position = Vector2(250,44)
+	$CanvasLayer/Container/HSlider3.position = Vector2(260,44)
 	$CanvasLayer/Container/HSlider3.set_max(4)
 	$CanvasLayer/Container/HSlider3.set_min(1)
 	$CanvasLayer/Container/HSlider3.set_value_no_signal(4)
 	
 	$CanvasLayer/Container/HSlider2.size = Vector2(50, 25)
-	$CanvasLayer/Container/HSlider2.position = Vector2(500,44)
+	$CanvasLayer/Container/HSlider2.position = Vector2(520,44)
 	$CanvasLayer/Container/HSlider2.set_max(4)
 	$CanvasLayer/Container/HSlider2.set_min(1)
 	$CanvasLayer/Container/HSlider2.set_value_no_signal(4)
 	
 	$CanvasLayer/Container/FractionOil.text = "Ration Oil: " + str(1)
-	$CanvasLayer/Container/FractionOil.size = Vector2(1, 25)
-	$CanvasLayer/Container/FractionOil.position = Vector2(150,44)
+	$CanvasLayer/Container/FractionOil.size = Vector2(150, 25)
+	$CanvasLayer/Container/FractionOil.position = Vector2(125,44)
 	
 	$CanvasLayer/Container/RichTextLabel2.text = "Ration Food: " + str(1)
 	$CanvasLayer/Container/RichTextLabel2.size = Vector2(150, 25)
