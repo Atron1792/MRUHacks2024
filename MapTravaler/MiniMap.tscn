@@ -185,6 +185,31 @@ layout_mode = 2
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/CanvasLayer/Container"]
 layout_mode = 2
 
+[node name="Events" type="Panel" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Events"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control/Events"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="Control/Events"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button3" type="Button" parent="Control/Events"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [node name="Overlay" parent="." instance=ExtResource("5_enad1")]
 
 [connection signal="timeout" from="Control/CanvasLayer/Timer" to="Control" method="_on_timer_timeout"]

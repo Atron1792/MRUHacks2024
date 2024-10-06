@@ -198,3 +198,142 @@ func _on_button_pressed() -> void:
 	add_Oil(oiladded)
 	add_Peps(pepsjoin)
 	add_Food(foodadded)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+func random_event() -> void:
+	var eventChanceCalculator = randi()%50
+	if eventChanceCalculator == 0:
+		$Events/RichTextLabel.add_text(
+			"Emergency!!! There is an avalanche coming down ahead of us on the track! We won’t be able to stop safely in time and according to our calculations it will hit the back carriage while passing, commander what do we do?"
+		)
+		pass
+	elif eventChanceCalculator == 1:
+		$Events/RichTextLabel.add_text(
+			"Commander!!! We have caught someone breaking into our food supply room trying to steal some food. Should we exile the man? The family states that if we exile the man that they threaten they would join the man. Commander, what should we do?"
+		)
+		pass
+	elif eventChanceCalculator == 2:
+		$Events/RichTextLabel.add_text(
+			"Good news commander! We have spotted a depot that still has some supplies! However the building itself is in a poor condition. We bet we can get one crate (around 30 of either food, wood, oil) out safely but the other 2 creates might be difficult to remove and cause the building to collapse."
+		)
+		pass
+	elif eventChanceCalculator == 3:
+		$Events/RichTextLabel.add_text(
+			"Good news commander! We have spotted a small colony still alive! They seem to be poorly brought together and look like they won't last very long. We have some supplies but is it enough to keep us alive? I know this is very controversial but I can gather a few people to go over and steal some of their supplies. What should I do, commander?"
+		)
+		pass
+	elif eventChanceCalculator == 4:
+		$Events/RichTextLabel.add_text(
+			"Bad news commander, while traveling through our most recent city some of the track was damaged causing the wheels of our train to be damaged. It is not serious but it is causing some of the storage compartments to shake. If this continues something might damage some of our supplies. What should we do commander?"
+		)
+		pass
+	pass
+func on_button_pressed(Scenario, option) -> void:
+	pass
