@@ -18,6 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 PF2D="*res://MapTravaler/path_follow_2d.gd"
+resce="*res://UI/UI Scripts/initresorce.gd"
+
+[display]
+
+window/size/mode=2
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [display]
 

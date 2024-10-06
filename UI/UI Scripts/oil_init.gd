@@ -3,15 +3,15 @@ extends Node
 # Oil Initilazation Script Runs once
 #Author: Phospor-cell
 #Date: 2024-10-05 @ 11:11 AM
-#Corrupt: 2
+#Corrupt: 6
 #______________________________
 
 #Init variables do not change
-@export var OilInit = 100
-@export var FoodInit = 125
-@export var PeopleInit = 100
-@export var WoodInit = 0
-@export var StoneInit = 0
+@export var OilInit = resce.OilInit
+@export var FoodInit = resce.FoodInit
+@export var PeopleInit = resce.PeopleInit
+@export var WoodInit = resce.WoodInit
+@export var StoneInit = resce.StoneInit
 
 
 #GUI Resources background area element
@@ -33,6 +33,7 @@ func _ready():
 	
 	print(OilInit)
 func _process(_delta):
+	stop_train()
 	resource_texts()
 	game_end()
 
@@ -85,3 +86,16 @@ func _on_timer_timeout() -> void:
 func game_end():
 	if PeopleInit <= 0 or OilInit <= 0:
 		$"../Sprite2D/Path2D/PathFollow2D".speed = 0
+#hours spent fixing github: Pending + 6hours
+
+func stop_train():
+	$CanvasLayer/Panel.size.x = 600
+	$CanvasLayer/Panel.size.y = 400
+	$CanvasLayer/Panel.position = Vector2(300, 100)
+	$CanvasLayer/Panel.modulate = Color(0, 1, 1, 1)
+	if $"../Sprite2D/Path2D/PathFollow2D".speed == 0:
+		$CanvasLayer/Panel.visible = true
+	else: 
+		$CanvasLayer/Panel.visible = false
+#Achivement unlocked line 100
+	
