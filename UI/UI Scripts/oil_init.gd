@@ -3,7 +3,7 @@ extends Node
 # Oil Initilazation Script Runs once
 #Author: Phospor-cell
 #Date: 2024-10-05 @ 11:11 AM
-#Corrupt: 9
+#Corrupt: 6
 #hours spent fixing github: Pending + 6hours
 #______________________________
 #Init variables do not change
@@ -11,36 +11,31 @@ extends Node
 @export var FoodInit = resce.FoodInit
 @export var PeopleInit = resce.PeopleInit
 @export var WoodInit = resce.WoodInit
-@export var StoneInit = resce.StoneInit
 
 var fraction_oil = 1
 var fraction_food = 1
 
+@export var SteelInit = resce.SteelInit
 var danger = 0;
-
-#upgrade vars
-var upg_oil = 0
-var upg_food = 0
-var upg_peps = 0
-var upg_wood = 0
-var upg_steel = 0
 
 #GUI Resources background area element
 
 #Ready Initilization
 func _ready():
-	get_node("CanvasLayer/Oil Text").size.x = 100
+	get_node("CanvasLayer/Oil Text").size.x = 200
 	get_node("CanvasLayer/Food Text").size.x = 100
-	get_node("CanvasLayer/Population Text").size.x = 130
+	get_node("CanvasLayer/Population Text").size.x = 150
 	get_node("CanvasLayer/Wood Text").size.x = 100
-	get_node("CanvasLayer/Stone Text").size.x = 100
+	get_node("CanvasLayer/Steel Text").size.x = 100
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: 0"
+	
 	#Text positioning (x,y)
-	$"CanvasLayer/Oil Text".position = Vector2(100,0)
-	$"CanvasLayer/Food Text".position = Vector2(200,0)
-	$"CanvasLayer/Population Text".position = Vector2(300,0)
-	$"CanvasLayer/Wood Text".position = Vector2(500,0)
-	$"CanvasLayer/Stone Text".position = Vector2(600,0)
+	$"CanvasLayer/Oil Text".position = Vector2(104,32)
+	$"CanvasLayer/Food Text".position = Vector2(352,32)
+	$"CanvasLayer/Population Text".position = Vector2(656,32)
+	$"CanvasLayer/Wood Text".position = Vector2(904,18)
+	$"CanvasLayer/Steel Text".position = Vector2(904,48)
+
 	
 	#rationing init
 	$CanvasLayer/Container/HSlider3.size = Vector2(50, 25)
@@ -63,7 +58,6 @@ func _ready():
 	$CanvasLayer/Container/RichTextLabel2.text = str(1)
 	$CanvasLayer/Container/RichTextLabel2.size = Vector2(50, 25)
 	$CanvasLayer/Container/RichTextLabel2.position = Vector2(10, 80)
-	upgrades_init()
 
 
 func _on_h_slider_3_drag_ended(value_changed: bool) -> void:
@@ -82,8 +76,6 @@ func _process(_delta):
 	game_end()
 	if FoodInit < 0:
 		FoodInit = 0
-	if Input.is_key_pressed(KEY_SPACE):
-		danger = round(abs($"../Sprite2D/Path2D/PathFollow2D".position.y)+($"../Sprite2D/Path2D/PathFollow2D".position.x)/100)
 
 func depletion_resource():
 	if !($CanvasLayer/Panel.visible):
@@ -110,11 +102,23 @@ func depletion_resource():
 				PeopleInit = round(randf_range(0, .1)*PeopleInit)
 
 func resource_texts():
-	$"CanvasLayer/Oil Text".text = "Oil: " + str(OilInit)
-	$"CanvasLayer/Food Text".text = "Food: " + str(FoodInit)
-	$"CanvasLayer/Population Text".text = "Population: " + str(PeopleInit)
-	$"CanvasLayer/Wood Text".text = "Wood: " + str(WoodInit)
-	$"CanvasLayer/Stone Text".text = "Steel: " + str(StoneInit)
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Oil Text/Oil/texture")
+	$"CanvasLayer/Oil Text".text = "     Oil: " + str(OilInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Food Text/Food/texture")
+	$"CanvasLayer/Food Text".text = "     Food: " + str(FoodInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Population Text/Population/texture")
+	$"CanvasLayer/Population Text".text = "     Population: " + str(PeopleInit)
+	
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Wood Text/Wood/texture")
+	$"CanvasLayer/Wood Text".text = "     Wood: " + str(WoodInit)
+	
+
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
+	$"CanvasLayer/Steel Text".text = "     Steel: " + str(SteelInit)
+	$"CanvasLayer/Oil Text".add_image($"CanvasLayer/Steel Text/Steel/texture")
+	$"CanvasLayer/Steel Text".text = "     Steel: " + str(SteelInit)
 
 func add_Oil(Oil):
 	OilInit += Oil
@@ -129,7 +133,7 @@ func add_Wood(Wood):
 	WoodInit += Wood
 
 func add_Steel(steel):
-	StoneInit += steel
+	SteelInit += steel
 
 func _on_timer_timeout() -> void:
 	depletion_resource()
@@ -137,9 +141,7 @@ func _on_timer_timeout() -> void:
 func game_end():
 	if PeopleInit <= 0 or OilInit <= 0:
 		$"../Sprite2D/Path2D/PathFollow2D".speed = 0
-	$CanvasLayer/Panel/Stop_text.text = "GAME OVER"
-	$CanvasLayer/Panel/Info_text.text = "The People Have Frozen"
-	
+		
 #Stop management UI
 func stop_train():
 	$CanvasLayer/Panel.size.x = 600
@@ -162,54 +164,176 @@ func stop_train():
 	$CanvasLayer/Panel/Info_text.size = Vector2(400, 200)
 	$CanvasLayer/Panel/Info_text.position = Vector2(100, 100)
 	stop_manager()
-
+ 
 #Stop management for resources
 func stop_manager():
 	$CanvasLayer/Panel/HSlider.editable = true
 	$CanvasLayer/Panel/HSlider.size = Vector2(250, 100)
 	$CanvasLayer/Panel/HSlider.set_max(round(PeopleInit/10))
-	$CanvasLayer/Panel/HSlider.position = Vector2(150,225)
+	$CanvasLayer/Panel/HSlider.position = Vector2(150,200)
 	$CanvasLayer/Panel/RichTextLabel.size.x = 250
-	$CanvasLayer/Panel/RichTextLabel.position = Vector2(150, 175)
-	$CanvasLayer/Panel/Button.position = Vector2(225, 300)
+	$CanvasLayer/Panel/RichTextLabel.position = Vector2(150, 200)
+	$CanvasLayer/Panel/Button.position = Vector2(200, 300)
 	$CanvasLayer/Panel/Button.size = Vector2(100, 50)
 	$CanvasLayer/Panel/Button.modulate = Color(255,255,255, 0.75)
 
-func _on_h_slider_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_drag_ended(_value_changed: bool) -> void:
 	$CanvasLayer/Panel/RichTextLabel.text = "Send Scavengers: " + str($CanvasLayer/Panel/HSlider.value)
-
-
-
 
 func _on_button_pressed() -> void:
 	$CanvasLayer/Panel.visible = false
-	var oiladded = round(abs(danger-20*($CanvasLayer/Panel/HSlider.value/10)*randi_range(0,2))) 
-	var foodadded = round(danger*($CanvasLayer/Panel/HSlider.value/10)*randi_range(0,2))
-	var pepsjoin = round(danger*randf_range(-1, 0) + $CanvasLayer/Panel/HSlider.value*danger*randf_range(0, 0.25))
-	var woodadded = round(danger*randf_range(0,1)*$CanvasLayer/Panel/HSlider.value)
-	var steeladded = round(danger*randf_range(0,0.5)*$CanvasLayer/Panel/HSlider.value)
+
+	
+	var foodadded = round((randi_range(0, 50)) * ($CanvasLayer/Panel/HSlider.value / 10) * ($"../Sprite2D/Path2D/PathFollow2D".position.y / 200) + absi(($"../Sprite2D/Path2D/PathFollow2D".position.x - 500) / 200))
+	var pepsjoin = round((randi_range(0, 20)) * ($CanvasLayer/Panel/HSlider.value / 10) * ($"../Sprite2D/Path2D/PathFollow2D".position.y / 200) + (($"../Sprite2D/Path2D/PathFollow2D".position.x - 200) / 200) * randi_range(-1, 1))
+	var oiladded = round((randi_range(0, 50)) * ($CanvasLayer/Panel/HSlider.value / 10) * ($"../Sprite2D/Path2D/PathFollow2D".position.y / 200) + absi((500 - $"../Sprite2D/Path2D/PathFollow2D".position.x) / 200))
 	
 	if PeopleInit >= 9999:
 		pepsjoin = 0
-	$CanvasLayer/Panel/RichTextLabel.text = "Scavengers Found: \nOil: " + str(oiladded) + "		Food: " + str(foodadded) + "	People: " + str(pepsjoin) + "	Wood: " +str(woodadded) + "		Steel: " + str(steeladded)
-	
+		
+	$CanvasLayer/Panel/RichTextLabel.text = "Scavengers Found: \nOil: " + str(oiladded) + "\nFood: " + str(foodadded) + "\nPeople: " + str(pepsjoin)
 	$CanvasLayer/Panel/RichTextLabel.size = Vector2(300,300)
 	$CanvasLayer/Panel.visible = true
+	
 	add_Oil(oiladded)
 	add_Peps(pepsjoin)
 	add_Food(foodadded)
-	add_Wood(woodadded)
-	add_Steel(steeladded)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
-
-func upgrades_init():
-	$Container/Panel/upg1.size = Vector2(400,300)
-	$Container/Panel/upg1.scale = Vector2(2,2)
-	$Container/Panel/upg1.position = Vector2(0, 10)
-	$Container/Panel/upg1.modulate = Color(0,0,0, 3)
-	$Container/Panel.modulate = Color(255,229,204,0.5)
-	$Container/Panel.size = Vector2(400, 500)
-	$Container/Panel.position = Vector2(2000,100)
-	$Container/Panel/upg1.text = "Oil Upgrades: 0\n\n Food Upgrades: 0\n\n Population Upgrades: 0\n\n Wood Upgrades: 0\n\n Steel Upgrades: 0\n"
-	
+func random_event() -> void:
+	var eventChanceCalculator = randi()%50
+	if eventChanceCalculator == 0:
+		$Events/RichTextLabel.add_text(
+			"Emergency!!! There is an avalanche coming down ahead of us on the track! We won’t be able to stop safely in time and according to our calculations it will hit the back carriage while passing, commander what do we do?"
+		)
+		pass
+	elif eventChanceCalculator == 1:
+		$Events/RichTextLabel.add_text(
+			"Commander!!! We have caught someone breaking into our food supply room trying to steal some food. Should we exile the man? The family states that if we exile the man that they threaten they would join the man. Commander, what should we do?"
+		)
+		pass
+	elif eventChanceCalculator == 2:
+		$Events/RichTextLabel.add_text(
+			"Good news commander! We have spotted a depot that still has some supplies! However the building itself is in a poor condition. We bet we can get one crate (around 30 of either food, wood, oil) out safely but the other 2 creates might be difficult to remove and cause the building to collapse."
+		)
+		pass
+	elif eventChanceCalculator == 3:
+		$Events/RichTextLabel.add_text(
+			"Good news commander! We have spotted a small colony still alive! They seem to be poorly brought together and look like they won't last very long. We have some supplies but is it enough to keep us alive? I know this is very controversial but I can gather a few people to go over and steal some of their supplies. What should I do, commander?"
+		)
+		pass
+	elif eventChanceCalculator == 4:
+		$Events/RichTextLabel.add_text(
+			"Bad news commander, while traveling through our most recent city some of the track was damaged causing the wheels of our train to be damaged. It is not serious but it is causing some of the storage compartments to shake. If this continues something might damage some of our supplies. What should we do commander?"
+		)
+		pass
+	pass
+func on_button_pressed(Scenario, option) -> void:
+	pass
