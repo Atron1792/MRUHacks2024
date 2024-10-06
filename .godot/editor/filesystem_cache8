@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 ::res://::1728181341
 icon.svg::CompressedTexture2D::658707289000408551::1728161415::1728181344::1::::<><>::
 node_2d.tscn::PackedScene::6880185265062693508::1728163805::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
@@ -15,3 +16,12 @@ TrainIcon.tscn::PackedScene::4503333096098676775::1728173573::0::1::::<><>::uid:
 gathering.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
 initresorce.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
 oil_init.gd::GDScript::-1::1728181231::0::1::::<>Node<>::
+=======
+::res://::1728166242
+icon.svg::CompressedTexture2D::658707289000408551::1728163179::1728166243::1::::<><>::
+node_2d.tscn::PackedScene::6880185265062693508::1728165811::0::1::::<><>::res://UI/UI Scripts/oil_init.gd
+::res://UI/::1728163179
+::res://UI/UI Scripts/::1728165811
+connet_resources.gd::GDScript::-1::1728165809::0::1::::<>Node<>::
+oil_init.gd::GDScript::-1::1728165811::0::1::::<>Node<>::
+>>>>>>> Stashed changes
