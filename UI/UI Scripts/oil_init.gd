@@ -58,7 +58,6 @@ func _ready():
 	$CanvasLayer/Container/RichTextLabel2.size = Vector2(150, 25)
 	$CanvasLayer/Container/RichTextLabel2.position = Vector2(370,44)
 
-
 func _on_h_slider_3_drag_ended(_value_changed: bool) -> void:
 	fraction_oil = $CanvasLayer/Container/HSlider3.value/4
 	$CanvasLayer/Container/FractionOil.text = "Ration Oil: " + str(fraction_oil)

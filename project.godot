@@ -13,7 +13,7 @@ config_version=5
 config/name="MRUHacks2024"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 run/canvas_textures/default_texture_filter=1
 
 [autoload]
@@ -23,7 +23,6 @@ resce="*res://UI/UI Scripts/initresorce.gd"
 
 [display]
 
-window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"

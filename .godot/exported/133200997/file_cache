@@ -1,0 +1,8 @@
+res://MapTravaler/MiniMap.tscn::8216fba3acc3de0993495b84517c0e57::1728246541::res://.godot/exported/133200997/export-07f3119f69f4f78b984dffb30f7fb689-MiniMap.scn
+res://MapTravaler/TrainIcon.tscn::103bb01bf6f63327864e93c43de38d36::1728218706::res://.godot/exported/133200997/export-f04e324a5cfb3ffc9a2b972eeccfad3a-TrainIcon.scn
+res://scenes/guide_menu.tscn::b32d405e9caff18d259cd0d797978b40::1728230173::res://.godot/exported/133200997/export-4e6612fbc01ab25d819378a2967befdb-guide_menu.scn
+res://scenes/main_menu.tscn::eaf5cd883455040de335a96dfcdd1f6f::1728246602::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/main_scene.tscn::42eddfb95b1bb022d1aea002139ceb6e::1728246541::res://.godot/exported/133200997/export-21a49e14a0c58d7941d04142a5bf9ddc-main_scene.scn
+res://UI/overlay.tscn::0431e3de6e59a9465227e2413a28d039::1728246541::res://.godot/exported/133200997/export-6c7533ecfe51c7062bd4f9780dc84e91-overlay.scn
+res://animatedRail.tscn::252b170ded976141b94d72f12b4285b2::1728218706::res://.godot/exported/133200997/export-38375d337dbbe5cbaf42711073c41c56-animatedRail.scn
+res://node_2d.tscn::a071e206015f391f19f326b84d990819::1728230173::res://.godot/exported/133200997/export-362256a061aa8890e9a1e558b11e5ec3-node_2d.scn
